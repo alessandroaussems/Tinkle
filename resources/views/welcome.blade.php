@@ -7,7 +7,7 @@
             </div>
             @auth
 
-                <a href="{{ url('/home') }}">Find me a toilet!</a>
+                <a href="{{ url('/findatoilet') }}">Find me a toilet!</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     <a href="{{ route('register') }}">Register</a>

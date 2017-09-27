@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home'); //defines pages to which user is redirected on login
+Route::get('/', 'HomeController@index')->name('welcome'); //defines pages to which user is redirected on login
 
 Route::get('/toilets', function () {
     // Only authenticated users may enter...
+    return view('toilets');
 })->middleware('auth');

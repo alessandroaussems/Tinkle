@@ -21,4 +21,5 @@ Route::get('/', 'HomeController@index')->name('home'); //defines pages to which 
 
 Route::get('/toilets', function () {
     // Only authenticated users may enter...
+    return view('toilets');
 })->middleware('auth');

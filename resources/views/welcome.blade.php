@@ -1,17 +1,24 @@
 @extends('layouts.app')
 @section('content')
-    <div class="flex-center position-ref full-height">
         <div class="content">
-            <div class="title m-b-md">
-                Tinkle
-            </div>
-            @auth
 
-                <a href="{{ url('/toilets') }}">Find me a toilet!</a>
+            @auth
+            <!-- Page Content -->
+            <div class="bg">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <a href="{{ url('/toilets') }}" role="button" class="btn btn-secondary btn-lg homeButton">Find me a toilet</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
                 @else
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
-                    @endauth
+                    <a href="{{ route('login') }}" role="button" class="btn btn-secondary btn-lg homeButton">Login</a>
+                    <a href="{{ route('register') }}" role="button" class="btn btn-secondary btn-lg homeButton">Register</a>
+            @endauth
         </div>
-    </div>
 @endsection

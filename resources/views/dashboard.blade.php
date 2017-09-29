@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <ul>
+                        <li><a href="{{ url('toilets') }}">View my toilets</a></li>
+                        <li><a href="{{ url('toilets/create') }}">Add a toilet!</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

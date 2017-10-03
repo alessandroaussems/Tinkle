@@ -8,7 +8,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-lg-6">
-                    <a href="{{ url('/toilets') }}" role="button" class="btn btn-secondary btn-lg homeButton">Find me a toilet</a>
+                    <a href="{{ url('/findatoilet') }}" role="button" class="btn btn-secondary btn-lg homeButton">Find me a toilet</a>
                   </div>
                 </div>
               </div>

@@ -4,21 +4,20 @@
 
             @auth
             <!-- Page Content -->
-            <div class="bg">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <a href="{{ url('/toilets') }}" role="button" class="btn btn-secondary btn-lg homeButton">Find me a toilet</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
                 @else
-                    <a href="{{ route('login') }}" role="button" class="btn btn-secondary btn-lg homeButton">Login</a>
-                    <a href="{{ route('register') }}" role="button" class="btn btn-secondary btn-lg homeButton">Register</a>
             @endauth
+
+
+
+                    <div class="hero__image">
+                        <img src="img/bg.jpg" alt="hero" class="img-responsive">
+                        <div class="text-hero">
+
+                        </div>
+                    </div>
+
+
+
+
         </div>
 @endsection

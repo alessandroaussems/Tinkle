@@ -27,4 +27,3 @@ Route::get('/dashboard', function () {
     // Only authenticated users may enter...
     return view('dashboard');
 })->middleware('auth');
-

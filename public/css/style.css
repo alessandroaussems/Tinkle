@@ -1,19 +1,16 @@
-.bg {
-  background: url('../img/bg.jpg') no-repeat center center fixed ;
+.text-hero{
 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
 }
-.navbar {
+
+
+
+.hero__image {
+    background-image: url("../img/bg.jpg");
+    postion:relative;
+    background-size: cover;
+
+}
+.navbar{
+
     margin-bottom: 0;
-}
-
-.homeButton{
-  margin-top: 50%;
 }

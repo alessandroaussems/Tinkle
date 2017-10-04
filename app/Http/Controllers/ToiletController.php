@@ -50,6 +50,7 @@ class ToiletController extends Controller
             $address = Input::get("adress").Input::get("city");
             $url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($address);
 
+
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

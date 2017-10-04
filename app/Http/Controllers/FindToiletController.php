@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\Http\Controllers;
+use App\Toilet;
 
 use Request;
 
@@ -12,6 +14,7 @@ class FindToiletController extends Controller
     }
     function index()
     {
-        return view("findtoilet");
+        $toilets = Toilet::all('lat','long');
+        return view("findtoilet")->with('toilets',$toilets);
     }
 }

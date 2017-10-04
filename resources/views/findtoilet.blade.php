@@ -9,8 +9,6 @@
             $js_array = json_encode($toilets);
             echo "var toilets = ". $js_array . ";\n";
             ?>
-        console.log(toilets);
-
         function initMap(position) {
             var uluru = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -31,10 +29,6 @@
                 });
             }
         }
-        var apiGeolocationSuccess = function(position) {
-            alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
-        };
-
         var tryAPIGeolocation = function() {
             jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY",
             function(success) {

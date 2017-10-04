@@ -129,9 +129,6 @@ class ToiletController extends Controller
         // delete
         $toilet = Toilet::find($id);
         $toilet->delete();
-
-        // redirect
-        Session::flash('message', 'Successfully deleted toilet');
         return Redirect::to('toilets');
     }
 }

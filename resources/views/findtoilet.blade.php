@@ -1,9 +1,16 @@
 @extends('layouts.app')
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <div style="width:100%; height: 92.5%; position: absolute;">
     <div id="map" style="clear:both; height:100%;"></div>
     </div>
     <script>
+            <?php
+            $js_array = json_encode($toilets);
+            echo "var toilets = ". $js_array . ";\n";
+            ?>
+        console.log(toilets);
+
         function initMap(position) {
             var uluru = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -14,6 +21,15 @@
                 position: uluru,
                 map: map
             });
+            var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+            for(var i=0; i < toilets.length; i++)
+            {
+                var beachMarker = new google.maps.Marker({
+                    position: {lat: Number(toilets[i]["lat"]), lng: Number(toilets[i]["long"])},
+                    map: map,
+                    icon: image
+                });
+            }
         }
         var apiGeolocationSuccess = function(position) {
             alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);

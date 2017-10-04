@@ -1,8 +1,17 @@
+body{
+  background-color: lightblue;
 
+}
 .navbar{
 
     margin-bottom: 0;
 }
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+/*Homepage*/
 #map {
     position:absolute;
     top:0;
@@ -55,11 +64,37 @@
 .logo a{
   display: block;
   width: 70%;
-  height: 2em;
+  margin: 0 auto;
+  height: 2.6em;
   position: relative;
   top: 70%;
   text-align: center;
 }
+.btn-primary{
+  border-radius: 0;
+  background-color: white;
+  border: 2px black solid;
+  color: black;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+.btn-primary:hover{
+
+  background-color: lightgrey;
+  color: black;
+
+  border: 2px black solid;
+}
+
+
+
+
+
+
+
+
+
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
 

@@ -7,7 +7,6 @@
             <td>Title</td>
             <td>Adress</td>
             <td>City</td>
-            <td>Description</td>
         </tr>
         </thead>
         <tbody>
@@ -16,7 +15,6 @@
                     <td>{{ $value->title }}</td>
                     <td>{{ $value->adress }}</td>
                     <td>{{ $value->city }}</td>
-                    <td>{{ substr($value->description, 0, 100)."..." }}</td>
 
                     <td>
                         <a class="btn btn-small btn-info" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>

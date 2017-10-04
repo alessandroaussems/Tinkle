@@ -12,6 +12,6 @@ class FindToiletController extends Controller
     }
     function index()
     {
-
+        return view("findtoilet");
     }
 }

@@ -9,10 +9,14 @@
               <div id="map"></div>
             </div>
             <div class="logo">
-              <img src="{{ asset('img/logo-text.png') }}" />
-              <h1 class="text">A toilet any place any time</h1>
-              <a href=""></a>
-              <a class="btn btn-primary" href="{{ url('findatoilet') }}" role="button">Find a toilet</a>
+              <div class="heroContent">
+                <img src="{{ asset('img/logo-text.png') }}" />
+                <hr>
+                <h1 class="text">A toilet any place any time</h1>
+                <a href=""></a>
+                <a class="btn btn-primary" href="{{ url('findatoilet') }}" role="button">Find a toilet</a>
+              </div>
+
             </div>
 
         </div>

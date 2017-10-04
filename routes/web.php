@@ -23,6 +23,9 @@ Route::get("/findatoilet","FindToiletController@index");
 
 Route::resource('toilets', 'ToiletController');
 
+Route::get("/toilet/vote/{id}","ToiletController@vote");
+Route::post('votesubmit', ['uses' => 'ToiletController@votesubmit']);
+
 Route::get('/dashboard', function () {
     // Only authenticated users may enter...
     return view('dashboard');

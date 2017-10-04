@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Toilet;
+use App\Vote;
 use Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -113,7 +114,7 @@ class ToiletController extends Controller
             $toilet->city           = Input::get('city');
             $toilet->description    = Input::get('description');
             $toilet->picture        = Input::get('image');
-            $toilet->userid          = Auth::user()->id;
+            $toilet->userid         = Auth::user()->id;
 
 
             $toilet->save();
@@ -130,5 +131,44 @@ class ToiletController extends Controller
         $toilet = Toilet::find($id);
         $toilet->delete();
         return Redirect::to('toilets');
+    }
+    public function vote($id)
+    {
+
+        $toilet = Toilet::find($id);
+        $vote   = Vote::all()->where("userid",Auth::user()->id);
+        if($vote->isEmpty())
+        {
+            $alreadyvoted=false;
+            return view("votetoilet")->with("toilet",$toilet)->with("alreadyvoted",$alreadyvoted);
+        }
+        else
+        {
+            $alreadyvoted=true;
+            $error="You already voted for this toilet!";
+            return view("votetoilet")->with("error",$error)->with("alreadyvoted",$alreadyvoted);
+        }
+
+    }
+    public  function votesubmit()
+    {
+        $sort=Input::get('action');
+        if($sort=="Up")
+        {
+            $sortofvote=true;
+        }
+        else
+        {
+            $sortofvote=false;
+        }
+        $vote = new Vote();
+        $vote->userid            = Auth::user()->id;
+        $vote->toiletid          = Input::get("invisibleid");
+        $vote->sort              = $sortofvote;
+
+        $vote->save();
+        echo "Thanks for your vote!";
+
+
     }
 }

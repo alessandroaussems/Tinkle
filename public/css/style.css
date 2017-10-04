@@ -1,6 +1,5 @@
 
 .navbar{
-
     margin-bottom: 0;
 }
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
@@ -17,8 +16,6 @@
     min-height:100%;
     height:100%;
     height:auto;
-    opacity: .50;
-    filter: alpha(opacity=65);
     background-repeat: no-repeat;
     background-position: center center;
 

@@ -11,7 +11,8 @@
             <div class="logo">
               <img src="{{ asset('img/logo-text.png') }}" />
               <h1 class="text">A toilet any place any time</h1>
-              <a href="{{ route('register') }}">Find a toilet</a>
+              <a href=""></a>
+              <a class="btn btn-primary" href="{{ url('findatoilet') }}" role="button">Find a toilet</a>
             </div>
 
         </div>

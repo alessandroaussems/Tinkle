@@ -3,27 +3,16 @@
         <div class="content">
 
             @auth
-            <!-- Page Content -->
-
                 @else
             @endauth
-
-
-
-
-
-            <div class="bg">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <a href="{{ url('/findatoilet') }}" role="button" class="btn btn-secondary btn-lg homeButton">Find me a toilet</a>
-                  </div>
-                </div>
-              </div>
+            <div class="container fill">
+              <div id="map"></div>
             </div>
-
-
-
+            <div class="logo">
+              <img src="{{ asset('img/logo-text.png') }}" />
+              <h1 class="text">A toilet any place any time</h1>
+              <a href="{{ route('register') }}">Find a toilet</a>
+            </div>
 
         </div>
 @endsection

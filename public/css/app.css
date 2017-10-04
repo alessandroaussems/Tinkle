@@ -3177,7 +3177,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     background-color: #2579a9;
     border-color: #133d55
 }
-
+/*
 .btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #2579a9;
@@ -3194,7 +3194,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     background-color: #3097D1;
     border-color: #2a88bd
 }
-
+*/
 .btn-primary .badge {
     color: #3097D1;
     background-color: #fff
@@ -4358,15 +4358,15 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #ddd
+    border-color: none;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-    background-color: #ddd
+    background-color: none
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #888
+    background-color: black
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {

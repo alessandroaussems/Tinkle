@@ -8,10 +8,8 @@
   font-weight: bold;
 }
 .navbar-default  , .navbar-toggle, {
-  display: none;
+  border-color: white;
 }
-
-
 
 
 /*Homepage*/
@@ -79,22 +77,31 @@
   width: 100%;
   font-size: 1.2em
 }
+/*-------------------------Dashboard----------------------------------*/
+
+
+
+
+
+/*-------------------------App.css------------------------------*/
 .btn-primary{
   border-radius: 0;
-  background-color: none;
+  background-color: transparent;
   border: 2px black solid;
+  width: 100%;
   color: black;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
 }
 .btn-primary:hover{
-
-  background-color: lightgrey;
+  background-color:rgba(0, 0, 255, 0.3);
   color: black;
-
   border: 2px black solid;
 }
-
+.btn-primary.active, .btn-primary:active {
+  background-color: transparent;
+  border: 2px black solid;
+}
 
 
 

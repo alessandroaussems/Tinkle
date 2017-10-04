@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div style="width:100%; height: 100%; position: absolute;">
+    <div style="width:100%; height: 92.5%; position: absolute;">
     <div id="map" style="clear:both; height:100%;"></div>
     </div>
     <script>

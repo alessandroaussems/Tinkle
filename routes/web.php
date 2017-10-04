@@ -19,7 +19,7 @@ Auth::routes();
 
 //Route::get('/', 'HomeController@index')->name('home'); //defines pages to which user is redirected on login
 
-
+Route::get("/findatoilet","FindToiletController@index");
 
 Route::resource('toilets', 'ToiletController');
 

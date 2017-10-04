@@ -21,7 +21,7 @@
                 position: uluru,
                 map: map
             });
-            var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+            var image = 'http://tinkle.dev/img/MapLogo.png';
             for(var i=0; i < toilets.length; i++)
             {
                 var beachMarker = new google.maps.Marker({
@@ -36,7 +36,8 @@
         };
 
         var tryAPIGeolocation = function() {
-            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
+            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY",
+            function(success) {
                 initMap({coords: {latitude: success.location.lat, longitude: success.location.lng}})
             })
                 .fail(function(err) {
@@ -75,6 +76,6 @@
         tryGeolocation();
     </script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJpEPPNdqKVTdQAqtDhKL7YQzUYU8aU-8&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY&callback=initMap">
     </script>
 @endsection

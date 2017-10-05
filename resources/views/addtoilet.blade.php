@@ -3,8 +3,6 @@
 @section('content')
     <div class="container">
 
-                    <h1>Add a toilet!</h1>
-
                     {{ Html::ul($errors->all()) }}
 
                     {{ Form::open(array('url' => 'toilets')) }}
@@ -35,7 +33,7 @@
                     </div>
 
 
-                    {{ Form::submit('Add toilet!', array('class' => 'btn btn-primary')) }}
+                    {{ Form::submit('Add toilet', array('class' => 'btn btn-primary')) }}
 
                     {{ Form::close() }}
 

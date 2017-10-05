@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
 
 
                 <div class="panel-body">
@@ -10,16 +9,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                        <a href="{{ url('toilets') }}" class="db btn-primary">
+                          View my toilets
+                        </a>
 
-
-                    
-                    <ul>
-                        <li><a href="{{ url('toilets') }}">View my toilets</a></li>
-                        <li><a href="{{ url('toilets/create') }}">Add a toilet!</a></li>
-                    </ul>
-
-
+                        <a href="{{ url('toilets/create') }}" class="db btn-primary">
+                          Add a toilet!
+                        </a>
                 </div>
 
-</div>
 @endsection

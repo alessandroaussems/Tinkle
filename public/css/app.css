@@ -3099,7 +3099,7 @@ textarea.form-control {
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.6;
-    border-radius: 4px;
+    border-radius: 0;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

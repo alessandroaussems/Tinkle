@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Vote Toilet!</h1>
+
 @if ($alreadyvoted)
     <p>{{ $error }}</p>
 @else
-{{Form::open(array('action' => 'ToiletController@votesubmit', 'files'=>true,'method'=>'post') )  }}
-{{Form::token()}}
-{{ Form::hidden('invisibleid', $toilet->id) }}
-{{ Form::submit('Up', ['name' => 'action']) }}
-{{ Form::submit('Down', ['name' => 'action']) }}
-{{ Form::close() }}
+<div class="container">
+  <h3>Score : {{$toilet->title}}</h3>
+  {{Form::open(array('action' => 'ToiletController@votesubmit', 'files'=>true,'method'=>'post') )  }}
+  {{Form::token()}}
+  {{ Form::hidden('invisibleid', $toilet->id) }}
+  {{ Form::submit('Good', ['name' => 'action', 'class' => 'vote btn btn-primary'])   }}
+  {{ Form::submit('Bad', ['name' => 'action', 'class' => 'vote btn btn-primary']) }}
+  {{ Form::close() }}
+</div>
+
     @endif
 @endsection

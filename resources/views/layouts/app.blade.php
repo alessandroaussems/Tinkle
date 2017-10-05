@@ -33,8 +33,14 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                      <!-- {{ config('app.name', 'Tinkle') }} -->
-                      <img src="{{ asset('img/MapLogo.png') }}" alt="">
+                      <div class="content">
+                        <img src="{{ asset('img/MapLogo.png') }}" alt="logo">
+                      </div>
+                      <div class="infoContent">
+                        <img src="{{ asset('img/Logo-text2.png') }}" class="logoD"alt="logo">
+                      </div>
+
+
                     </a>
                 </div>
 

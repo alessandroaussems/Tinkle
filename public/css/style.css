@@ -132,7 +132,7 @@ body{
 }
 .btn-primary:hover{
   color: black;
-  border: 1px black solid;
+  border: 2px black solid;
 }
 .btn-primary.active, .btn-primary:active {
   background-color: transparent;
@@ -146,21 +146,67 @@ body{
 
 
 
-
-
-
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-
+.content{
+  display: block;
+}
+.infoContent{
+  display: none;
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (max-width: @screen-md-min) {
 
-}
+@media (min-width:768px) {
 
-/* Large devices (large desktops, 1200px and up) */
-@media (max-width: @screen-lg-min) {
+  .content{
+    display: none;
+  }
+  .infoContent{
+    display: block;
+  }
+  body{
+    background-color: transparent;
+  }
+
+
+  header.masthead {
+    background: url('../img/bg2.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+
+  header.masthead>.overlay {
+    padding: 5em 0;
+    height: 40em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .logoD{
+    height: 30px;
+  }
+  .infoHeroContent{
+    display: block;
+    width: 30%;
+    position: relative;
+    top: 10em;
+    text-align: center;
+    margin: -100px auto 0;
+    z-index: 10;
+  }
+  .infoHeroContent img{
+    width: 100%
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

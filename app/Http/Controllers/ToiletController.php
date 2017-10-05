@@ -63,23 +63,33 @@ class ToiletController extends Controller
             if ($response->status == 'OK') {
                 $latitude = $response->results[0]->geometry->location->lat;
                 $longitude = $response->results[0]->geometry->location->lng;
+            }if(isset($latitude) && isset($longitude))
+            {
+                // store
+                $toilet = new Toilet();
+                $toilet->title           = Input::get('title');
+                $toilet->adress          = Input::get('adress');
+                $toilet->city            = Input::get('city');
+                $toilet->description     = Input::get('description');
+                $toilet->picture         = Input::get('image');
+                $toilet->userid          = Auth::user()->id;
+                $toilet->lat             = $latitude;
+                $toilet->long            = $longitude;
+
+                $toilet->save();
+
+                // redirect
+                Session::flash('message', 'Successfully added!');
+                return Redirect::to('/toilets');
             }
-            // store
-            $toilet = new Toilet();
-            $toilet->title           = Input::get('title');
-            $toilet->adress          = Input::get('adress');
-            $toilet->city            = Input::get('city');
-            $toilet->description     = Input::get('description');
-            $toilet->picture         = Input::get('image');
-            $toilet->userid          = Auth::user()->id;
-            $toilet->lat             = $latitude;
-            $toilet->long            = $longitude;
+            else
+            {
+                return Redirect::to('toilets/create')
+                    ->withErrors("This adress could not be resolved! Our apologies!")
+                    ->withInput();
+            }
 
-            $toilet->save();
 
-            // redirect
-            Session::flash('message', 'Successfully added!');
-            return Redirect::to('/toilets');
         }
     }
     public function edit($id)

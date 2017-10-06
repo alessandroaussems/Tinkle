@@ -181,16 +181,23 @@ class ToiletController extends Controller
 
         $toilet = Toilet::find($id);
         $vote   = Vote::all()->where("userid",Auth::user()->id);
-        if($vote->isEmpty())
+        if($toilet === NULL)
         {
-            $alreadyvoted=false;
-            return view("votetoilet")->with("toilet",$toilet)->with("alreadyvoted",$alreadyvoted);
+            abort(404);
         }
         else
         {
-            $alreadyvoted=true;
-            $error="You already voted for this toilet!";
-            return view("votetoilet")->with("error",$error)->with("alreadyvoted",$alreadyvoted);
+            if($vote->isEmpty())
+            {
+                $alreadyvoted=false;
+                return view("votetoilet")->with("toilet",$toilet)->with("alreadyvoted",$alreadyvoted);
+            }
+            else
+            {
+                $alreadyvoted=true;
+                $error="You already voted for this toilet!";
+                return view("votetoilet")->with("error",$error)->with("alreadyvoted",$alreadyvoted);
+            }
         }
 
     }

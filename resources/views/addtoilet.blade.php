@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-                    {{ Html::ul($errors->all()) }}
+                    {{ Html::ul($errors->all(), array('class' => 'errors'))}}
 
                     {{ Form::open(['url' => 'toilets','files' => true])}}
 

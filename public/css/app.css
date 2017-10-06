@@ -6455,3 +6455,8 @@ button.close {
         display: none!important
     }
 }
+.errors
+{
+    list-style-type: none;
+    color: red;
+}

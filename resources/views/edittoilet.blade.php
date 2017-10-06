@@ -5,7 +5,7 @@
 
                     <h1>Edit toilet!</h1>
 
-                    {{ Html::ul($errors->all()) }}
+                    {{ Html::ul($errors->all(), array('class' => 'errors'))}}
 
                     {{ Form::model($toilet, array('route' => array('toilets.update', $toilet->id), 'method' => 'PUT','files' => true)) }}
 

@@ -15,9 +15,11 @@
                 zoom: 15,
                 center: uluru
             });
+            var currentImage="http://tinkle.dev/img/cp.png";
             var marker = new google.maps.Marker({
                 position: uluru,
-                map: map
+                map: map,
+                icon: currentImage
             });
             var image = 'http://tinkle.dev/img/MapLogo.png';
             for(var i=0; i < toilets.length; i++)

@@ -24,11 +24,28 @@
             var image = 'http://tinkle.dev/img/MapLogo.png';
             for(var i=0; i < toilets.length; i++)
             {
-                var beachMarker = new google.maps.Marker({
+                var contentString = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h1 id="title">'+toilets[i]["title"]+'</h1>'+
+                '<a href="/toilets/'+ toilets[i]["id"] +'">More information!</a>'+
+                '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+
+                    content: contentString
+                });
+
+                var toiletMarker = new google.maps.Marker({
                     position: {lat: Number(toilets[i]["lat"]), lng: Number(toilets[i]["long"])},
                     map: map,
+                    title: toilets[i]["title"],
                     icon: image
                 });
+                toiletMarker.addListener('click', function() {
+                    infowindow.open(map, toiletMarker);
+                });
+
             }
         }
         var tryAPIGeolocation = function() {

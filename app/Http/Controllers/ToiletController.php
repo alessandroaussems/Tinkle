@@ -213,6 +213,10 @@ class ToiletController extends Controller
         $vote->save();
         echo "Thanks for your vote!";
 
-
+    }
+    public function show($id)
+    {
+        $toilet = Toilet::find($id);
+        return view("toiletdetail")->with('toilet', $toilet);
     }
 }

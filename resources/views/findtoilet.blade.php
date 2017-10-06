@@ -22,30 +22,35 @@
                 icon: currentImage
             });
             var image = 'http://tinkle.dev/img/MapLogo.png';
+                var markers_toilet=[];
+                var contents_toilets = [];
+                var infowindows_toilets = [];
             for(var i=0; i < toilets.length; i++)
             {
-                var contentString = '<div id="content">'+
+                markers_toilet[i] = new google.maps.Marker({
+                    position: {lat: Number(toilets[i]["lat"]), lng: Number(toilets[i]["long"])},
+                    map: map,
+                    title: toilets[i]["title"],
+                    icon: image
+                });
+
+                markers_toilet[i].index=i;
+
+                contents_toilets[i] = '<div id="content">'+
                 '<div id="siteNotice">'+
                 '</div>'+
                 '<h1 id="title">'+toilets[i]["title"]+'</h1>'+
                 '<a href="/toilets/'+ toilets[i]["id"] +'">More information!</a>'+
                 '</div>';
 
-                var infowindow = new google.maps.InfoWindow({
-
-                    content: contentString
+                 infowindows_toilets[i] = new google.maps.InfoWindow({
+                    content: contents_toilets[i]
                 });
 
-                var toiletMarker = new google.maps.Marker({
-                    position: {lat: Number(toilets[i]["lat"]), lng: Number(toilets[i]["long"])},
-                    map: map,
-                    title: toilets[i]["title"],
-                    icon: image
+                google.maps.event.addListener(markers_toilet[i], 'click', function() {
+                    infowindows_toilets[this.index].open(map,markers_toilet[this.index]);
+                    map.panTo(markers_toilet[this.index].getPosition());
                 });
-                toiletMarker.addListener('click', function() {
-                    infowindow.open(map, toiletMarker);
-                });
-
             }
         }
         var tryAPIGeolocation = function() {

@@ -4,7 +4,7 @@
 
         @foreach($toilets as $key => $value)
           <div class="toilet">
-            <img src="{{ asset('img/wc.jpg') }}" alt="">
+            <img src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="">
             <h4>{{ $value->title }}</h4>
             <p>{{ $value->adress }} {{ $value->city }}</p>
                     <a class="btn btn-small btn-info" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>

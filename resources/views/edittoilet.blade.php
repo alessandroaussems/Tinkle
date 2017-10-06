@@ -7,7 +7,7 @@
 
                     {{ Html::ul($errors->all()) }}
 
-                    {{ Form::model($toilet, array('route' => array('toilets.update', $toilet->id), 'method' => 'PUT')) }}
+                    {{ Form::model($toilet, array('route' => array('toilets.update', $toilet->id), 'method' => 'PUT','files' => true)) }}
 
                     <div class="form-group">
                         {{ Form::label('title', 'Title') }}

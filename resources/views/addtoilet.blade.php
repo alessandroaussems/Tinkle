@@ -5,7 +5,7 @@
 
                     {{ Html::ul($errors->all()) }}
 
-                    {{ Form::open(array('url' => 'toilets')) }}
+                    {{ Form::open(['url' => 'toilets','files' => true])}}
 
                     <div class="form-group">
                         {{ Form::label('title', 'Title') }}

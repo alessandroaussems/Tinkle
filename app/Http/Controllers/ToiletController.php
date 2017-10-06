@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 use App\Toilet;
 use App\Vote;
-use Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Request;
-use Input;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
 class ToiletController extends Controller
@@ -28,7 +28,7 @@ class ToiletController extends Controller
     {
         return view("addtoilet");
     }
-    public function store()
+    public function store(Request $request)
     {
         // validate
         // read more on validation at http://laravel.com/docs/validation
@@ -37,7 +37,7 @@ class ToiletController extends Controller
             'adress'     => 'required' ,
             'city'       => 'required',
             'description'=> 'required',
-            'image'      => ''
+            'image'      => 'required|image'
 
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -48,6 +48,10 @@ class ToiletController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
+            $image = $request->file('image');
+            $photoName = Input::get('title').'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('img/toiletuploads'), $photoName);
+
             $address = Input::get("adress").Input::get("city");
             $url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($address);
 
@@ -71,7 +75,7 @@ class ToiletController extends Controller
                 $toilet->adress          = Input::get('adress');
                 $toilet->city            = Input::get('city');
                 $toilet->description     = Input::get('description');
-                $toilet->picture         = Input::get('image');
+                $toilet->picture         = $photoName;
                 $toilet->userid          = Auth::user()->id;
                 $toilet->lat             = $latitude;
                 $toilet->long            = $longitude;
@@ -97,7 +101,7 @@ class ToiletController extends Controller
         $toilet = Toilet::find($id);
         return view("edittoilet")->with('toilet', $toilet);
     }
-    public function update($id)
+    public function update($id,Request $request)
     {
         // validate
         // read more on validation at http://laravel.com/docs/validation
@@ -106,28 +110,58 @@ class ToiletController extends Controller
             'adress'     => 'required' ,
             'city'       => 'required',
             'description'=> 'required',
-            'image'      => ''
+            'image'      => 'required|image'
 
         );
         $validator = Validator::make(Input::all(), $rules);
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('toilets/create')
+            return Redirect::to('toilets/'.$id."/edit")
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            // store
-            $toilet                 = Toilet::find($id);
-            $toilet->title          = Input::get('title');
-            $toilet->adress         = Input::get('adress');
-            $toilet->city           = Input::get('city');
-            $toilet->description    = Input::get('description');
-            $toilet->picture        = Input::get('image');
-            $toilet->userid         = Auth::user()->id;
+            $image = $request->file('image');
+            $photoName = Input::get('title').'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('img/toiletuploads'), $photoName);
+
+            $address = Input::get("adress").Input::get("city");
+            $url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($address);
 
 
-            $toilet->save();
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $responseJson = curl_exec($ch);
+            curl_close($ch);
+
+            $response = json_decode($responseJson);
+
+            if ($response->status == 'OK') {
+                $latitude = $response->results[0]->geometry->location->lat;
+                $longitude = $response->results[0]->geometry->location->lng;
+            }
+            if(isset($latitude) && isset($longitude)) {
+                // store
+                $toilet = Toilet::find($id);
+                $toilet->title = Input::get('title');
+                $toilet->adress = Input::get('adress');
+                $toilet->city = Input::get('city');
+                $toilet->description = Input::get('description');
+                $toilet->picture         = $photoName;
+                $toilet->lat             = $latitude;
+                $toilet->long            = $longitude;
+                $toilet->picture = $photoName;
+
+
+                $toilet->save();
+            }
+            else
+            {
+                return Redirect::to('toilets/'.$id."/edit")
+                    ->withErrors("This adress could not be resolved! Our apologies!")
+                    ->withInput();
+            }
 
             // redirect
             Session::flash('message', 'Successfully added!');

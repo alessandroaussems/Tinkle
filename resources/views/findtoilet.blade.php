@@ -42,8 +42,8 @@
                 contents_toilets[i] = '<div id="content">'+
                 '<div id="siteNotice">'+
                 '</div>'+
-                '<h1 id="title">'+toilets[i]["title"]+'</h1>'+
-                '<a href="/toilets/'+ toilets[i]["id"] +'">More information!</a>'+
+                '<h4>'+toilets[i]["title"]+'</h4>'+
+                '<a href="/toilets/'+ toilets[i]["id"] +'" class=" full">More info</a>'+
                 '</div>';
 
                  infowindows_toilets[i] = new google.maps.InfoWindow({

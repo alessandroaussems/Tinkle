@@ -1,5 +1,5 @@
 body{
-  background-color: lightblue;
+  background-color: #EEEEF7;
 }
 .navbar{
     margin-bottom: 0;
@@ -12,7 +12,6 @@ body{
 .navbar-default  , .navbar-toggle, {
   border-color: white;
 }
-
 
 /*-------------------------Homepage--------------*/
 #map {
@@ -97,10 +96,11 @@ body{
 
 /*--------------------------toilet-------------------------------*/
 .toilet{
-  margin: 1em auto;
-  padding: 1em;
-  width: 90%;
+  margin: 0 auto;
+  padding: 1.5em;
+  width: 100%;
   background-color: white;
+  border-bottom: 1px solid #000;
 }
 .toilet img{
   width: 100%;
@@ -108,7 +108,9 @@ body{
 .toilet a{
   width: 5em;
 }
-
+.onetoilet .full{
+  width: 100%;
+}
 
 
 
@@ -129,7 +131,8 @@ body{
   margin: 2em 0;
 }
 .btn-primary:hover{
-  color: lightgray;
+  color: white;
+  background-color: #009CBC;
 }
 .btn-primary.active, .btn-primary:active {
 }

@@ -1,5 +1,5 @@
 body{
-  background-color: lightgrey;
+  background-color: lightblue;
 }
 .navbar{
     margin-bottom: 0;
@@ -71,7 +71,7 @@ body{
 
   font-family: 'Lobster', cursive;
   font-size: 1.5em;
-  color: blue;
+  color: black;
   margin-bottom: 50px;
 }
 .logo hr{
@@ -121,22 +121,17 @@ body{
 /*-------------------------App.css------------------------------*/
 .btn-primary{
   border-radius: 0;
-  background-color: transparent;
-  border: 2px black solid;
   width: 100%;
-  color: black;
+  color: white;
+  background-color: #008CBA;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
   margin: 2em 0;
-    background-color:rgba(0, 0, 255, 0.3);
 }
 .btn-primary:hover{
-  color: black;
-  border: 2px black solid;
+  color: lightgray;
 }
 .btn-primary.active, .btn-primary:active {
-  background-color: transparent;
-  border: 1px black solid;
 }
 
 .form-control {

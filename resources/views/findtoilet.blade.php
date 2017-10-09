@@ -13,7 +13,10 @@
             var uluru = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
-                center: uluru
+                center: uluru,
+                fullscreenControl: false,
+                streetViewControl: false,
+                mapTypeControl: false
             });
             var currentImage="http://tinkle.dev/img/cp.png";
             var marker = new google.maps.Marker({

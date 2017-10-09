@@ -40,8 +40,8 @@
                 markers_toilet[i].index=i;
 
                 contents_toilets[i] = '<div id="content">'+
-                '<div id="siteNotice">'+
-                '</div>'+
+                '<img src="<?php echo asset("img/toiletuploads/") ?>'+"/"+toilets[i]["picture"]+
+                '"</div>'+
                 '<h1 id="title">'+toilets[i]["title"]+'</h1>'+
                 '<a href="/toilets/'+ toilets[i]["id"] +'">More information!</a>'+
                 '</div>';

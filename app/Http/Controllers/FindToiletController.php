@@ -14,7 +14,7 @@ class FindToiletController extends Controller
     }
     function index()
     {
-        $toilets = Toilet::all('title','id','lat','long');
+        $toilets = Toilet::all('title','id','picture','lat','long');
         return view("findtoilet")->with('toilets',$toilets);
     }
 }

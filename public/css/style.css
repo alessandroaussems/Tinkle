@@ -108,10 +108,15 @@ body{
 .toilet a{
   width: 5em;
 }
+/*-------------------------------MAP & detail--------------------------------*/
 .onetoilet .full{
   width: 100%;
 }
-
+.gm-style img {
+    display:  flex !important;
+    width: 50%;
+    float: left;
+}
 
 
 

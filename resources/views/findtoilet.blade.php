@@ -94,6 +94,6 @@
         tryGeolocation();
     </script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY">
     </script>
 @endsection

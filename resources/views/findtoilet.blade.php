@@ -43,7 +43,7 @@
                 '<img src="<?php echo asset("img/toiletuploads/") ?>'+"/"+toilets[i]["picture"]+
                 '"</div>'+
                 '<h4 id="title">'+toilets[i]["title"]+'</h4>'+
-                '<a href="/toilets/'+ toilets[i]["id"] +'">More information!</a>'+
+                '<a href="/toilets/'+ toilets[i]["id"] +'">More info</a>'+
                 '</div>';
 
                  infowindows_toilets[i] = new google.maps.InfoWindow({

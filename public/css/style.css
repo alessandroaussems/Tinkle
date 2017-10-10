@@ -114,10 +114,13 @@ body{
 }
 .gm-style img {
     display:  flex !important;
-    width: 50%;
-    float: left;
+    width: 10em;
 }
-
+.vote{
+  width: 50%;
+  float: left;
+  margin: 5em 0
+}
 
 
 

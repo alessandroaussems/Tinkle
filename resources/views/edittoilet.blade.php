@@ -3,7 +3,6 @@
 @section('content')
     <div class="container">
 
-                    <h1>Edit toilet!</h1>
 
                     {{ Html::ul($errors->all(), array('class' => 'errors'))}}
 

@@ -2,6 +2,10 @@
 
 @section('content')
 
+        @if(count($toilets) == 0)
+            <h2>You haven't added any toilets.</h2>
+            <a href="{{ url('toilets/create') }}">Add a toilet</a>
+        @else
         @foreach($toilets as $key => $value)
           <div class="toilet">
             <img src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="">
@@ -18,5 +22,6 @@
 
 
         @endforeach
+        @endif
 
 @endsection

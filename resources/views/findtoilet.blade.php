@@ -24,7 +24,7 @@
                 map: map,
                 icon: currentImage
             });
-            var image = 'http://tinkle.dev/img/MapLogo.png';
+            var image = 'http://tinkle.dev/img/maplogo.png';
                 var markers_toilet=[];
                 var contents_toilets = [];
                 var infowindows_toilets = [];

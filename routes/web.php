@@ -28,5 +28,5 @@ Route::post('votesubmit', ['uses' => 'ToiletController@votesubmit']);
 
 Route::get('/dashboard', function () {
     // Only authenticated users may enter...
-    return view('dashboard');
+    return view('welcome');
 })->middleware('auth');

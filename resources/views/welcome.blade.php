@@ -26,7 +26,7 @@
                 <div class="infoHeroContent">
                   <img src="{{ asset('img/logo-text.png') }}" />
                   <hr>
-                  <h1 class="text">A toilet any place any time</h1>
+                  <h1 class="text">A toilet any place, any time</h1>
                   <a class="btn btn-primary" href="{{ url('findatoilet') }}" role="button">Find a toilet</a>
                 </div>
               </div>
@@ -38,13 +38,17 @@
               <div class="row align-items-center">
                 <div class="col-md-6 order-2">
                   <div class="p-5">
-                    <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=836" alt="">
+                    <img class="img-fluid rounded-circle" src="{{ asset('img/toilet.jpg') }}" alt="">
                   </div>
                 </div>
                 <div class="col-md-6 order-1">
                   <div class="p-5">
-                    <h2 class="display-4">tinkle blablablabla</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                    <h2 class="display-4">Tinkle: A toiletapp</h2>
+                    <p>We all know the feeling right? You are in the city having a great time when suddenly: You have to go to the toilet!
+                      Toilets are not always very clean specially for woman. That's where Tinkle comes in. Take the app find a toilet and here you go!
+                      People can know offer you to use there toilet. You want to offer your toilet? Register and add it! Join the Tinkle community and give
+                      everyone a toilet, any place, any time
+                    </p>
                   </div>
                 </div>
               </div>
@@ -55,7 +59,7 @@
           <!-- Footer -->
           <footer class="py-5 bg-dark">
             <div class="container">
-              <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+              <p class="m-0 text-center text-white">Copyright &copy; Tinkle 2017</p>
             </div>
             <!-- /.container -->
           </footer>

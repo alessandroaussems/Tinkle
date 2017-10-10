@@ -155,7 +155,7 @@ body{
 .content{
   display: block;
 }
-.infoContent{
+.desktop{
   display: none;
 }
 
@@ -165,44 +165,37 @@ body{
   .content{
     display: none;
   }
-  .infoContent{
+  .desktop{
     display: block;
   }
   body{
     background-color: transparent;
   }
+.googlePlay{
+  width: 30%;
+  margin: 2em auto;
+}
 
 
-  header.masthead {
-    background: url('../img/bg2.jpg') no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-
-  header.masthead>.overlay {
-    padding: 5em 0;
-    height: 40em;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-  }
   .logoD{
     height: 30px;
   }
   .infoHeroContent{
-    display: block;
     width: 30%;
     position: relative;
-    top: 10em;
     text-align: center;
-    margin: -100px auto 0;
-    z-index: 10;
+    margin: 10em auto ;
   }
   .infoHeroContent img{
     width: 100%
   }
-
+footer{
+  margin-top: 20em;
+  color: white;
+  background-color: gray;
+  bottom: 0;
+  width: 100%;
+}
 
 
 

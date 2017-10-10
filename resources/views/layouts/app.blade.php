@@ -37,44 +37,46 @@
                       <div class="content">
                         <img src="{{ asset('img/maplogo.png') }}" alt="logo">
                       </div>
-                      <div class="infoContent">
+                      <div class="desktop">
                         <img src="{{ asset('img/logo-text2.png') }}" class="logoD"alt="logo">
                       </div>
 
 
                     </a>
                 </div>
+                <div class="content">
+                  <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                      <!-- Left Side Of Navbar -->
+                      <!-- Right Side Of Navbar -->
+                      <ul class="nav navbar-nav navbar-right">
+                          <!-- Authentication Links -->
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
+                          @guest
+                              <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
+                              <li><a href="{{ route('login') }}">Login</a></li>
+                              <li><a href="{{ route('register') }}">Register</a></li>
+                          @else
+                                      <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
+                                      <li><a href="{{ url('toilets') }}">View my toilets  </a></li>
+                                      <li><a href="{{ url('toilets/create') }}">Add a toilet</a></li>
+                                      <li>
+                                          <a href="{{ route('logout') }}"
+                                              onclick="event.preventDefault();
+                                                       document.getElementById('logout-form').submit();">
+                                              Logout
+                                          </a>
 
+                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                              {{ csrf_field() }}
+                                          </form>
+                                      </li>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                                    <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
-                                    <li><a href="{{ url('toilets') }}">View my toilets  </a></li>
-                                    <li><a href="{{ url('toilets/create') }}">Add a toilet</a></li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-
-                        @endguest
-                    </ul>
+                          @endguest
+                      </ul>
+                  </div>
                 </div>
+
+
             </div>
         </nav>
 

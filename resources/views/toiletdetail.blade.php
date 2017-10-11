@@ -4,13 +4,16 @@
 
         <div class="toilet">
           <div class="onetoilet">
-            <img src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="">
             <h3>{{ $toilet->title }}</h3>
-            <p>Aantal mensen die dit goed vonden: {{$goodvotes}}</p>
-              <p>Aantal mensen die dit slecht vonden: {{$badvotes}}</p>
+            <div class="toiletuploads">
+              <img src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="">
+            </div>
+            <div class="votes ">
+              <p class="col-xs-6">{{$goodvotes}} <i class="material-icons">thumb_up   </i> </p>
+              <p class="col-xs-6">{{$badvotes}} <i class="material-icons">&#xe8db;</i></p>
+            </div>
             <p>{{ $toilet->description}}</p>
-
-            <b><p>{{ $toilet->adress }} {{ $toilet->city }}</p></b>
+            <b class="adress"><p>{{ $toilet->adress }} {{ $toilet->city }}</p></b>
             <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
 
           </div>

@@ -1,5 +1,5 @@
 body{
-  background-color: #EEEEF7;
+  background-color: lightblue;
 }
 .navbar{
     margin-bottom: 0;
@@ -98,15 +98,36 @@ body{
 .toilet{
   margin: 0 auto;
   padding: 1.5em;
-  width: 100%;
   background-color: white;
   border-bottom: 1px solid #000;
 }
 .toilet img{
-  width: 100%;
+  width: 70%;
+  margin-left: 15%;
 }
 .toilet a{
   width: 5em;
+}
+.toilet h3{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.votes i{
+  font-size: 1em;
+}
+.votes p{
+  margin-top:1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+.toiletuploads{
+  background-color: lightgray;
+}
+
+.toilet .adress p{
+  margin: 4em 0 0 0;
 }
 /*-------------------------------MAP & detail--------------------------------*/
 .onetoilet .full{
@@ -121,7 +142,9 @@ body{
   float: left;
   margin: 5em 0
 }
-
+.EditDelete{
+  margin-top: 5em;
+}
 
 
 

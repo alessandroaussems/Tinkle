@@ -5,7 +5,7 @@ Mensen die enthousiast zijn  (Vrouwen: 7 / Mannen: 3)
 - Logo's duidelijker
 - Minder valide + kinderen (aanduiden bij aanmaken toilet)
 - Opmerking bij het stemmen
-- geen profiel : registreer hier
+- geen profiel : registreer hier :white_check_mark: 
 - Locatie of je Thuis bent, dan moet je zelf niet ingeven
 - Veiligheid
 - Navigate knop ineens op de kaart

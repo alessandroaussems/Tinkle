@@ -6,7 +6,8 @@
           <div class="onetoilet">
             <img src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="">
             <h3>{{ $toilet->title }}</h3>
-
+            <p>Aantal mensen die dit goed vonden: {{$goodvotes}}</p>
+              <p>Aantal mensen die dit slecht vonden: {{$badvotes}}</p>
             <p>{{ $toilet->description}}</p>
 
             <b><p>{{ $toilet->adress }} {{ $toilet->city }}</p></b>

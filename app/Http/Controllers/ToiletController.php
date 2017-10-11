@@ -204,13 +204,13 @@ class ToiletController extends Controller
     public  function votesubmit()
     {
         $sort=Input::get('action');
-        if($sort=="Up")
+        if($sort=="Good")
         {
-            $sortofvote=true;
+            $sortofvote=1;
         }
         else
         {
-            $sortofvote=false;
+            $sortofvote=0;
         }
         $vote = new Vote();
         $vote->userid            = Auth::user()->id;
@@ -223,7 +223,23 @@ class ToiletController extends Controller
     }
     public function show($id)
     {
+        $goodvotes=[];
+        $badvotes=[];
         $toilet = Toilet::find($id);
-        return view("toiletdetail")->with('toilet', $toilet);
+        $votes = Vote::all()->where("toiletid",$id);
+        for ($i=0;$i<count($votes);$i++)
+        {
+            if($votes[$i]->sort==0)
+            {
+                array_push($badvotes,$votes[$i] );
+            }
+            else
+            {
+                array_push($goodvotes,$votes[$i] );
+            }
+        }
+        $number_goodvotes=count($goodvotes);
+        $number_badvotes=count($badvotes);
+        return view("toiletdetail")->with('toilet', $toilet)->with('badvotes', $number_badvotes)->with('goodvotes', $number_goodvotes);
     }
 }

@@ -218,7 +218,8 @@ class ToiletController extends Controller
         $vote->sort              = $sortofvote;
 
         $vote->save();
-        echo "Thanks for your vote!";
+
+        return view("votesubmit");
 
     }
     public function show($id)

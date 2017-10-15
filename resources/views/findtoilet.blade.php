@@ -40,10 +40,11 @@
                 markers_toilet[i].index=i;
 
                 contents_toilets[i] = '<div id="content">'+
+                '<h4 class="text-center">'+toilets[i]["title"]+'</h4>'+
                 '<img src="<?php echo asset("img/toiletuploads/") ?>'+"/"+toilets[i]["picture"]+
                 '"</div>'+
-                '<h4 id="title">'+toilets[i]["title"]+'</h4>'+
-                '<a href="/toilets/'+ toilets[i]["id"] +'">More info</a>'+
+
+                '<a href="/toilets/'+ toilets[i]["id"] +'"  class="btn btn-primary more " >More info</a>'+
                 '</div>';
 
                  infowindows_toilets[i] = new google.maps.InfoWindow({

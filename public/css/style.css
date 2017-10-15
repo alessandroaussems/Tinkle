@@ -1,5 +1,8 @@
 body{
-  background-color: lightblue;
+  background-color: white;
+}
+.navContainer{
+  background-color: rgb(221, 245, 245);
 }
 .navbar{
     margin-bottom: 0;
@@ -137,6 +140,10 @@ body{
     display:  flex !important;
     width: 10em;
 }
+.gm-style-iw{
+  top: 0  !important;
+  left: 22px  !important;
+}
 .vote{
   width: 50%;
   float: left;
@@ -145,7 +152,9 @@ body{
 .EditDelete{
   margin-top: 5em;
 }
-
+.more{
+  margin-bottom: 0 !important;
+}
 
 
 
@@ -156,14 +165,15 @@ body{
   border-radius: 0;
   width: 100%;
   color: white;
-  background-color: #008CBA;
+  background: rgb(50, 73, 87);
   font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
+  padding: 0.6em;
   margin: 2em 0;
 }
 .btn-primary:hover{
   color: white;
-  background-color: #009CBC;
+  background-color: #165B75;
 }
 .btn-primary.active, .btn-primary:active {
 }

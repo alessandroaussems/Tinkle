@@ -278,6 +278,7 @@ class ToiletController extends Controller
         $badvotes=[];
         $comments=[];
         $toilet = Toilet::find($id);
+        $user = User::find($toilet->userid);
         $votes = Vote::all()->where("toiletid",$id);
         for ($i=0;$i<count($votes);$i++)
         {
@@ -306,7 +307,8 @@ class ToiletController extends Controller
             ->with('toilet', $toilet)
             ->with('badvotes', $number_badvotes)
             ->with('goodvotes', $number_goodvotes)
-            ->with('comments', $comments);
+            ->with('comments', $comments)
+            ->with('user',$user->name);
 
     }
 }

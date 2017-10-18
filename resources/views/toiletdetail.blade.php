@@ -20,6 +20,7 @@
             </div>
             <p>{{ $toilet->description}}</p>
             <b class="adress"><p>{{ $toilet->adress }} {{ $toilet->city }}</p></b>
+              <p>Aangeboden door: {{$user}}</p>
             <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
               @if($toilet->disabledcancome==1)
                   <p>Toegankelijk voor gehandicapten!</p>

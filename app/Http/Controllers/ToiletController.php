@@ -26,7 +26,6 @@ class ToiletController extends Controller
             $goodvotes=0;
             $badvotes=0;
             $votes=Vote::all()->where("toiletid",$toilets[$i]->id);
-            echo $votes;
             for($j=0;$j<count($votes);$j++)
             {
                 if($votes[$j]->sort==0)

@@ -24,8 +24,8 @@
               <div class="card-icon">6</div>
               <p class="card-author"></p>
               <p class="card-stats">
-                  6 <i class="material-icons">thumb_up   </i>
-                  6 <i class="material-icons">&#xe8db;   </i>
+                  {{$value->goodvotes}} <i class="material-icons">thumb_up   </i>
+                  {{$value->badvotes}} <i class="material-icons">&#xe8db;   </i>
               </p>
 
 

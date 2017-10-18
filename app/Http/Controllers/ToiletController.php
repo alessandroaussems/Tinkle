@@ -21,6 +21,27 @@ class ToiletController extends Controller
     public function index()
     {
         $toilets = Toilet::all()->where("userid",Auth::user()->id);
+        for($i=0;$i<count($toilets);$i++)
+        {
+            $goodvotes=0;
+            $badvotes=0;
+            $votes=Vote::all()->where("toiletid",$toilets[$i]->id);
+            echo $votes;
+            for($j=0;$j<count($votes);$j++)
+            {
+                if($votes[$j]->sort==0)
+                {
+                    $goodvotes++;
+                }
+                else
+                {
+                    $badvotes++;
+                }
+            }
+            $toilets[$i]->{"goodvotes"}=$goodvotes;
+            $toilets[$i]->{"badvotes"}=$badvotes;
+
+        }
 
         return view("usertoilets")->with('toilets',$toilets);
 

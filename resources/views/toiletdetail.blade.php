@@ -5,6 +5,12 @@
         <div class="toilet">
           <div class="onetoilet">
             <h3>{{ $toilet->title }}</h3>
+              <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{$toilet->percentagehome}}"
+                       aria-valuemin="0" aria-valuemax="100" style="width:{{$toilet->percentagehome}}%">
+                      {{$toilet->percentagehome}}%
+                  </div>
+              </div>
             <div class="toiletuploads">
               <img src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="">
             </div>

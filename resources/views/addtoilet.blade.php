@@ -28,6 +28,11 @@
                     </div>
 
                     <div class="form-group">
+                        {{ Form::label('percentagehome', 'Percentagehome') }}
+                        {{ Form::text('percentagehome', Input::old('percentagehome'), array('class' => 'form-control')) }}
+                    </div>
+
+                    <div class="form-group">
                         {{ Form::label('disabledcancome', 'Accesible for Disabled') }}
                         {{ Form::checkbox('disabledcancome', 'true')}}
                     </div>

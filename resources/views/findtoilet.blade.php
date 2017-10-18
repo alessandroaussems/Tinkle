@@ -18,13 +18,13 @@
                 streetViewControl: false,
                 mapTypeControl: false
             });
-            var currentImage="https://tinkletoilets.com/public/img/cp.png";
+            var currentImage="/img/cp.png";
             var marker = new google.maps.Marker({
                 position: uluru,
                 map: map,
                 icon: currentImage
             });
-            var image = 'https://tinkletoilets.com/public/img/maplogo.png';
+            var image = '/img/maplogo.png';
                 var markers_toilet=[];
                 var contents_toilets = [];
                 var infowindows_toilets = [];

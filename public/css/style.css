@@ -1,7 +1,7 @@
 body{
   background-color: white;
 }
-.navContainer{
+.navbar{
   background-color: rgb(221, 245, 245);
 }
 .navbar{
@@ -12,8 +12,8 @@ body{
   font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
 }
-.navbar-default  , .navbar-toggle, {
-  border-color: white;
+.navbar-default  , .navbar-toggle {
+  border-color:  rgb(221, 245, 245);;
 }
 
 /*-------------------------Homepage--------------*/
@@ -84,6 +84,9 @@ body{
   width: 100%;
   font-size: 1.2em
 }
+.content img{
+  margin-top: -0.6em;
+}
 /*-------------------------Dashboard----------------------------------*/
 .db{
   display: block;
@@ -125,9 +128,7 @@ body{
   text-align: center;
   font-size: 1.5em;
 }
-.toiletuploads{
-  background-color: lightgray;
-}
+
 
 .toilet .adress p{
   margin: 4em 0 0 0;
@@ -150,7 +151,8 @@ body{
   margin: 5em 0
 }
 .EditDelete{
-  margin-top: 5em;
+  margin: 5em auto;
+  width: 70%;
 }
 .more{
   margin-bottom: 0 !important;
@@ -185,48 +187,6 @@ body{
 
 
 
-.content{
-  display: block;
-}
-.desktop{
-  display: none;
-}
-
-
-@media (min-width:768px) {
-
-  .content{
-    display: none;
-  }
-  .desktop{
-    display: block;
-  }
-  body{
-    background-color: transparent;
-  }
-.googlePlay{
-  width: 30%;
-  margin: 2em auto;
-}
-
-
-  .logoD{
-    height: 30px;
-  }
-  .infoHeroContent{
-    width: 30%;
-    position: relative;
-    text-align: center;
-    margin: 10em auto ;
-  }
-  .infoHeroContent img{
-    width: 100%
-  }
-footer{
-  margin-top: 20em;
-  bottom: 0;
-  width: 100%;
-}
 
 
 
@@ -237,6 +197,3 @@ footer{
 
 
 
-
-
-}

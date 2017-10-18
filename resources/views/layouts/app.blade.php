@@ -38,11 +38,9 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                       <div class="content">
-                        <img src="{{ asset('img/maplogo.png') }}" alt="logo">
+                        <img src="{{ asset('img/logo-text2.png') }}" alt="logo">
                       </div>
-                      <div class="desktop">
-                        <img src="{{ asset('img/logo-text2.png') }}" class="logoD"alt="logo">
-                      </div>
+
 
 
                     </a>

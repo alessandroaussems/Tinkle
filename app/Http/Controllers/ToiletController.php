@@ -70,6 +70,10 @@ class ToiletController extends Controller
                 $longitude = $response->results[0]->geometry->location->lng;
             }if(isset($latitude) && isset($longitude))
             {
+                if(Input::get("disabledcancome") == true)
+                {
+                    $disabledcancome=1;
+                }
                 // store
                 $toilet = new Toilet();
                 $toilet->title           = Input::get('title');
@@ -80,6 +84,7 @@ class ToiletController extends Controller
                 $toilet->userid          = Auth::user()->id;
                 $toilet->lat             = $latitude;
                 $toilet->long            = $longitude;
+                $toilet->disabledcancome = $disabledcancome;
 
                 $toilet->save();
 
@@ -143,6 +148,14 @@ class ToiletController extends Controller
                 $longitude = $response->results[0]->geometry->location->lng;
             }
             if(isset($latitude) && isset($longitude)) {
+                if(Input::get("disabledcancome") == true)
+                {
+                    $disabledcancome=1;
+                }
+                else
+                {
+                    $disabledcancome=0;
+                }
                 // store
                 $toilet = Toilet::find($id);
                 $toilet->title = Input::get('title');
@@ -153,6 +166,7 @@ class ToiletController extends Controller
                 $toilet->lat             = $latitude;
                 $toilet->long            = $longitude;
                 $toilet->picture = $photoName;
+                $toilet->disabledcancome = $disabledcancome;
 
 
                 $toilet->save();

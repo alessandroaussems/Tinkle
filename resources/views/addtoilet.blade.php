@@ -28,6 +28,11 @@
                     </div>
 
                     <div class="form-group">
+                        {{ Form::label('disabledcancome', 'Accesible for Disabled') }}
+                        {{ Form::checkbox('disabledcancome', 'true')}}
+                    </div>
+
+                    <div class="form-group">
                         {{ Form::label('image', 'Image') }}
                         {{Form::file('image')}}
                     </div>

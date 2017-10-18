@@ -10,7 +10,7 @@
 
 
 
-      <a href="{{ url('/') }}" class="btn btn-primary">Go back </a>
+      <a href="{{ url('/') }}" class="btn btn-primary">Back to the homepage!</a>
 </div>
 
 @endsection

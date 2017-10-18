@@ -17,8 +17,18 @@
             <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
 
           </div>
-
-
+        </div>
+        <div class="comments">
+          <ul>
+            @foreach($comments as $key => $value)
+              <li>
+                <div class="comment">
+                  <h4>{{$value[0]}}</h4>
+                  <p>{{$value[1]}}</p>
+                </div>
+              </li>
+              @endforeach
+          </ul>
         </div>
 
 

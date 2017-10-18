@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Toilet;
 use App\Vote;
+use App\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -203,29 +204,43 @@ class ToiletController extends Controller
     }
     public  function votesubmit()
     {
-        $sort=Input::get('action');
-        if($sort=="Good")
-        {
-            $sortofvote=1;
-        }
-        else
-        {
-            $sortofvote=0;
-        }
-        $vote = new Vote();
-        $vote->userid            = Auth::user()->id;
-        $vote->toiletid          = Input::get("invisibleid");
-        $vote->sort              = $sortofvote;
+        $rules = array(
+            'vote'      => 'required',
 
-        $vote->save();
+        );
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails())
+        {
+            return Redirect::to('toilet/vote/'.$id)
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $sort=Input::get("vote");
+            if ($sort == "Good")
+            {
+                $sortofvote = 1;
+            }
+            else
+            {
+                $sortofvote = 0;
+            }
+            $vote = new Vote();
+            $vote->userid = Auth::user()->id;
+            $vote->toiletid = Input::get("invisibleid");
+            $vote->sort = $sortofvote;
+            $vote->comment=Input::get("comment");
 
-        return view("votesubmit");
+            $vote->save();
+
+            return view("votesubmit");
+        }
 
     }
     public function show($id)
     {
         $goodvotes=[];
         $badvotes=[];
+        $comments=[];
         $toilet = Toilet::find($id);
         $votes = Vote::all()->where("toiletid",$id);
         for ($i=0;$i<count($votes);$i++)
@@ -238,9 +253,23 @@ class ToiletController extends Controller
             {
                 array_push($goodvotes,$votes[$i] );
             }
+            if($votes[$i]->comment!=NULL)
+            {
+                $idofvoter=$votes[$i]->userid;
+                $user = User::find($idofvoter);
+                $user_name=$user->name;
+                $thecomment=[];
+                array_push($thecomment,$user_name);
+                array_push($thecomment,$votes[$i]->comment);
+                array_push($comments,$thecomment);
+            }
         }
         $number_goodvotes=count($goodvotes);
         $number_badvotes=count($badvotes);
-        return view("toiletdetail")->with('toilet', $toilet)->with('badvotes', $number_badvotes)->with('goodvotes', $number_goodvotes);
+        return view("toiletdetail")
+            ->with('toilet', $toilet)
+            ->with('badvotes', $number_badvotes)
+            ->with('goodvotes', $number_goodvotes)
+            ->with('comments', $comments);
     }
 }

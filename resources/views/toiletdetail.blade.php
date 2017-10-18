@@ -2,33 +2,51 @@
 
 @section('content')
 
-        <div class="toilet">
-          <div class="onetoilet">
-            <h3>{{ $toilet->title }}</h3>
-              <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="{{$toilet->percentagehome}}"
-                       aria-valuemin="0" aria-valuemax="100" style="width:{{$toilet->percentagehome}}%">
-                      {{$toilet->percentagehome}}%
-                  </div>
-              </div>
-            <div class="toiletuploads">
-              <img src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="">
+
+    <div class="card">
+        @if($toilet->disabledcancome != NULL)
+            <div class="card-icon accessible">
+                <i class="material-icons">accessible</i>
             </div>
-            <div class="votes ">
-              <p class="col-xs-6">{{$goodvotes}} <i class="material-icons">thumb_up   </i> </p>
-              <p class="col-xs-6">{{$badvotes}} <i class="material-icons">&#xe8db;</i></p>
+        @endif
+        <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="header" />
+            <div class="container">
+                <div class="card-info">
+                    <h1 class="card-title">{{ $toilet->title }}</h1>
+
+                    <p class="card-stats">
+                        {{$goodvotes}} <i class="material-icons">thumb_up   </i>
+                        {{$badvotes}} <i class="material-icons">&#xe8db;   </i>
+                    </p>
+                    <p>Aangeboden door: {{$user}}</p>
+
+                </div>
+
+                <p>{{ $toilet->description}}</p>
+                <br>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$toilet->percentagehome}}"
+                         aria-valuemin="0" aria-valuemax="100" style="width:{{$toilet->percentagehome}}%">
+                        {{$toilet->percentagehome}}%
+                    </div>
+                </div>
+                <b class="adress"><p>{{ $toilet->adress }} {{ $toilet->city }}</p></b>
+
+                <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
+
             </div>
-            <p>{{ $toilet->description}}</p>
-            <b class="adress"><p>{{ $toilet->adress }} {{ $toilet->city }}</p></b>
-              <p>Aangeboden door: {{$user}}</p>
-            <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
-              @if($toilet->disabledcancome==1)
-                  <p>Toegankelijk voor gehandicapten!</p>
-              @endif
+
+    </div>
 
 
-          </div>
-        </div>
+
+
+
+
+
+
+
+
         <div class="comments">
           <ul>
             @foreach($comments as $key => $value)

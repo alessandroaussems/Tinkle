@@ -10,29 +10,31 @@
   @foreach($toilets as $key => $value)
 
 
-      <div class="card">
-          <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="header" />
-          <div class="EditDelete">
-              <a class="btn btn-small btn-info" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>
-              {{ Form::open(array('url' => 'toilets/' . $value->id, 'class' => 'pull-right')) }}
-              {{ Form::hidden('_method', 'DELETE') }}
-              {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-              {{ Form::close() }}
-          </div>
-          <div class="card-info">
-              <h1 class="card-title">{{ $value->title }}</h1>
-              <div class="card-icon">
-                  @if($value->disabledcancome != NULL)
-                  6
-                  @endif
+          <div class="card">
+              @if($value->disabledcancome != NULL)
+                  <div class="card-icon accessible">
+                      <i class="material-icons">accessible</i>
+                  </div>
+              @endif
+              <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="header" />
+              <div class="EditDelete">
+                  <a class="btn btn-small btn-info" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>
+                  {{ Form::open(array('url' => 'toilets/' . $value->id, 'class' => 'pull-right')) }}
+                  {{ Form::hidden('_method', 'DELETE') }}
+                  {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                  {{ Form::close() }}
               </div>
-              <p class="card-author"></p>
-              <p class="card-stats">
-                  {{$value->goodvotes}} <i class="material-icons">thumb_up   </i>
-                  {{$value->badvotes}} <i class="material-icons">&#xe8db;   </i>
-              </p>
+                  <div class="mainTitle">
+              <div class="card-info">
+                  <h1 class="card-title">{{ $value->title }}</h1>
+
+                  <p class="card-stats">
+                      {{$value->goodvotes}} <i class="material-icons">thumb_up   </i>
+                      {{$value->badvotes}} <i class="material-icons">&#xe8db;   </i>
+                  </p>
 
 
+              </div>
           </div>
       </div>
 
@@ -42,7 +44,7 @@
 
 
 
-    </div>
+
 
 
   @endforeach

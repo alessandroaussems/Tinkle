@@ -21,7 +21,11 @@
           </div>
           <div class="card-info">
               <h1 class="card-title">{{ $value->title }}</h1>
-              <div class="card-icon">6</div>
+              <div class="card-icon">
+                  @if($value->disabledcancome != NULL)
+                  6
+                  @endif
+              </div>
               <p class="card-author"></p>
               <p class="card-stats">
                   {{$value->goodvotes}} <i class="material-icons">thumb_up   </i>

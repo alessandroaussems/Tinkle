@@ -38,7 +38,8 @@ class ToiletController extends Controller
             'adress'     => 'required' ,
             'city'       => 'required',
             'description'=> 'required',
-            'image'      => 'required|image'
+            'image'      => 'required|image',
+            'percentagehome' => 'required'
 
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -48,7 +49,14 @@ class ToiletController extends Controller
             return Redirect::to('toilets/create')
                 ->withErrors($validator)
                 ->withInput();
-        } else {
+        }
+        if (intval(Input::get('percentagehome')) < 0 || intval(Input::get('percentagehome'))> 100)
+        {
+            return Redirect::to('toilets/create')
+                ->withErrors("Percentage must be between 0 and 100")
+                ->withInput();
+        }
+        else {
             $image = $request->file('image');
             $photoName = Input::get('title').'.'.$image->getClientOriginalExtension();
             $image->move(public_path('img/toiletuploads'), $photoName);
@@ -74,6 +82,10 @@ class ToiletController extends Controller
                 {
                     $disabledcancome=1;
                 }
+                else
+                {
+                    $disabledcancome=0;
+                }
                 // store
                 $toilet = new Toilet();
                 $toilet->title           = Input::get('title');
@@ -85,6 +97,7 @@ class ToiletController extends Controller
                 $toilet->lat             = $latitude;
                 $toilet->long            = $longitude;
                 $toilet->disabledcancome = $disabledcancome;
+                $toilet->percentagehome  = Input::get('percentagehome');
 
                 $toilet->save();
 
@@ -116,7 +129,8 @@ class ToiletController extends Controller
             'adress'     => 'required' ,
             'city'       => 'required',
             'description'=> 'required',
-            'image'      => 'required|image'
+            'image'      => 'required|image',
+            'percentagehome' => 'required'
 
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -126,7 +140,14 @@ class ToiletController extends Controller
             return Redirect::to('toilets/'.$id."/edit")
                 ->withErrors($validator)
                 ->withInput();
-        } else {
+        }
+        if (intval(Input::get('percentagehome')) < 0 || intval(Input::get('percentagehome'))> 100)
+        {
+            return Redirect::to('toilets/create')
+                ->withErrors("Percentage must be between 0 and 100")
+                ->withInput();
+        }
+        else {
             $image = $request->file('image');
             $photoName = Input::get('title').'.'.$image->getClientOriginalExtension();
             $image->move(public_path('img/toiletuploads'), $photoName);
@@ -167,6 +188,7 @@ class ToiletController extends Controller
                 $toilet->long            = $longitude;
                 $toilet->picture = $photoName;
                 $toilet->disabledcancome = $disabledcancome;
+                $toilet->percentagehome  = Input::get('percentagehome');
 
 
                 $toilet->save();
@@ -285,5 +307,6 @@ class ToiletController extends Controller
             ->with('badvotes', $number_badvotes)
             ->with('goodvotes', $number_goodvotes)
             ->with('comments', $comments);
+
     }
 }

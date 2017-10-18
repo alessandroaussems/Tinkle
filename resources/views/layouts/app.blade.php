@@ -16,6 +16,8 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/foundation.css') }}" rel="stylesheet">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
@@ -81,11 +83,16 @@
             </div>
         </nav>
 
+
+
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="{{ asset('js/foundation/vendor/jquery.js') }}"></script>
+    <script src="{{ asset('js/foundation/vendor/what-input.js') }}"></script>
+    <script src="{{ asset('js/foundation/vendor/foundation.js') }}"></script>
+    <script src="{{ asset('js/foundation/app.js') }}"></script>
 </body>
 </html>

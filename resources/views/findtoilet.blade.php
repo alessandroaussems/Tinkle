@@ -16,7 +16,8 @@
                 center: uluru,
                 fullscreenControl: false,
                 streetViewControl: false,
-                mapTypeControl: false
+                mapTypeControl: false,
+                zoomControl: false
             });
             var currentImage="/img/cp.png";
             var marker = new google.maps.Marker({

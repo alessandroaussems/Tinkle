@@ -18,15 +18,14 @@
               @endif
               <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="header" />
               <div class="EditDelete">
-                  <a class="btn btn-small btn-info" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>
-                  <a class="right">
-                      {{ Form::open(array('url' => 'toilets/' . $value->id)) }}
-                      {{ Form::hidden('_method', 'DELETE') }}
-                      {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
-                      {{ Form::close() }}
-                  </a>
+                  <a class="btn btn-small btn-info edit" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>
 
-              </div>
+                    {{ Form::open(array('url' => 'toilets/' . $value->id, 'style'=>'display:inline-block; position:absolute; right:1em;')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
+                    {{ Form::close() }}
+
+                 </div>
                   <div class="mainTitle">
               <div class="card-info">
                   <h1 class="card-title">{{ $value->title }}</h1>

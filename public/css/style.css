@@ -159,10 +159,11 @@ margin: -4em 1em 1em 1em;
 .EditDelete a{
   width: 5em;
 }
-.r{
-    right: 10px;
-    position: absolute;
-}
+
+.delete{
+     position: absolute;
+     right: 0;
+ }
 .more{
   margin-bottom: 0 !important;
 }

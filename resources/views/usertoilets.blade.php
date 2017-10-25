@@ -19,10 +19,13 @@
               <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="header" />
               <div class="EditDelete">
                   <a class="btn btn-small btn-info" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>
-                  {{ Form::open(array('url' => 'toilets/' . $value->id, 'class' => 'pull-right')) }}
-                  {{ Form::hidden('_method', 'DELETE') }}
-                  {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                  {{ Form::close() }}
+                  <a class="right">
+                      {{ Form::open(array('url' => 'toilets/' . $value->id)) }}
+                      {{ Form::hidden('_method', 'DELETE') }}
+                      {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
+                      {{ Form::close() }}
+                  </a>
+
               </div>
                   <div class="mainTitle">
               <div class="card-info">

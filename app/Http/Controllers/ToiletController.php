@@ -136,9 +136,19 @@ class ToiletController extends Controller
             }
             else
             {
-                return Redirect::to('toilets/create')
-                    ->withErrors("This adress could not be resolved! Our apologies!")
-                    ->withInput();
+                if ($response->status == 'OVER_QUERY_LIMIT')
+                {
+                    return Redirect::to('toilets/create')
+                        ->withErrors("The API limit for today is exceeded!")
+                        ->withInput();
+                }
+                else
+                {
+                    return Redirect::to('toilets/create')
+                        ->withErrors("This address could not be resolved, Our apologies.")
+                        ->withInput();
+                }
+
             }
 
 

@@ -122,7 +122,7 @@ class ToiletController extends Controller
                 $toilet->save();
 
                 // redirect
-                Session::flash('message', 'Successfully added!');
+                Session::flash('message', 'Toilet succesfully added!');
                 return Redirect::to('/toilets');
             }
             else
@@ -221,7 +221,7 @@ class ToiletController extends Controller
             }
 
             // redirect
-            Session::flash('message', 'Successfully added!');
+            Session::flash('message', 'Toilet succesfully updated!');
             return Redirect::to('/toilets');
         }
     }

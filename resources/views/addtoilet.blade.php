@@ -6,7 +6,7 @@
                     {{ Html::ul($errors->all(), array('class' => 'errors'))}}
 
                     {{ Form::open(['url' => 'toilets','files' => true])}}
-                    {{ csrf_field() }}
+
                     <div class="form-group">
                         {{ Form::label('title', 'Title') }}
                         {{ Form::text('title', Input::old('title'), array('class' => 'form-control')) }}
@@ -27,7 +27,10 @@
                         {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control')) }}
                     </div>
 
-|
+                    <div class="form-group">
+                        {{ Form::label('percentagehome', 'Percentagehome') }}
+                        {{ Form::text('percentagehome', Input::old('percentagehome'), array('class' => 'form-control')) }}
+                    </div>
 
                     <div class="form-group">
                         {{ Form::label('disabledcancome', 'Accesible for Disabled') }}
@@ -35,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('image', 'Upload Image')}}
+                        {{ Form::label('image', 'Image upload') }}
                         {{Form::file('image')}}
                     </div>
 

@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('percentagehome', 'Percentagehome') }}
+                        {{ Form::label('percentagehome', 'How often are you home? (0 is never, 100 is always)') }}
                         {{ Form::text('percentagehome', Input::old('percentagehome'), array('class' => 'form-control')) }}
                     </div>
 

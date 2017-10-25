@@ -122,6 +122,13 @@ class ToiletController extends Controller
 
                 $toilet->save();
 
+                Mail::raw("Your toilet is succesfully added! Thanks for using Tinkle!", function($message)
+                {
+                    $message->subject('Tinkletoilet: '.Input::get('title'));
+                    $message->from('no-reply@tinkletoilets.com', 'Tinkle');
+                    $message->to(Auth::user()->email);
+                });
+
 
                 // redirect
                 Session::flash('message', 'Toilet succesfully added!');

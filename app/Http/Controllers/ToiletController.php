@@ -21,12 +21,13 @@ class ToiletController extends Controller
     }
     public function index()
     {
-        $toilets = Toilet::all()->where("userid",Auth::user()->id);
+
+        $toilets = Toilet::where("userid",Auth::user()->id)->get();
         for($i=0;$i<count($toilets);$i++)
         {
             $goodvotes=0;
             $badvotes=0;
-            $votes=Vote::all()->where("toiletid",$toilets[$i]->id);
+            $votes=Vote::where("toiletid",$toilets[$i]->id)->get();
             for($j=0;$j<count($votes);$j++)
             {
                 if($votes[$j]->sort==0)
@@ -40,7 +41,6 @@ class ToiletController extends Controller
             }
             $toilets[$i]->{"goodvotes"}=$goodvotes;
             $toilets[$i]->{"badvotes"}=$badvotes;
-
         }
 
         return view("usertoilets")->with('toilets',$toilets);
@@ -122,12 +122,6 @@ class ToiletController extends Controller
 
                 $toilet->save();
 
-                Mail::raw("Your new toilet is added!", function($message)
-                {
-                    $message->subject('Your new toilet!: '. Input::get('title'));
-                    $message->from('no-reply@tinkletoilets.com', 'TinkleToilets');
-                    $message->to(Auth::user()->email);
-                });
 
                 // redirect
                 Session::flash('message', 'Toilet succesfully added!');

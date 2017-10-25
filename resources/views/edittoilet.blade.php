@@ -7,6 +7,7 @@
                     {{ Html::ul($errors->all(), array('class' => 'errors'))}}
 
                     {{ Form::model($toilet, array('route' => array('toilets.update', $toilet->id), 'method' => 'PUT','files' => true)) }}
+                    {{ csrf_field() }}
 
                     <div class="form-group">
                         {{ Form::label('title', 'Title') }}

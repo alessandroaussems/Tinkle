@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Toilet;
 use App\Vote;
 use App\User;
+use Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -120,6 +121,13 @@ class ToiletController extends Controller
                 $toilet->percentagehome  = Input::get('percentagehome');
 
                 $toilet->save();
+
+                Mail::raw("Your new toilet is added!", function($message)
+                {
+                    $message->subject('Your new toilet!: '. Input::get('title'));
+                    $message->from('no-reply@tinkletoilets.com', 'TinkleToilets');
+                    $message->to(Auth::user()->email);
+                });
 
                 // redirect
                 Session::flash('message', 'Toilet succesfully added!');

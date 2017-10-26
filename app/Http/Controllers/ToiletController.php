@@ -5,12 +5,14 @@ use App\Toilet;
 use App\Vote;
 use App\User;
 use Mail;
+use QrCode;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 
 class ToiletController extends Controller
@@ -121,12 +123,17 @@ class ToiletController extends Controller
                 $toilet->percentagehome  = Input::get('percentagehome');
 
                 $toilet->save();
+                $toiletID = $toilet->id;
 
-                Mail::raw("Your toilet is succesfully added! Thanks for using Tinkle!", function($message)
+
+
+                Mail::raw("Your toilet is succesfully added! Thanks for using Tinkle! 
+                In attachment you find a QR-code, please hang this in your toilets, with this people can rate your toilet", function($message) use($toiletID)
                 {
                     $message->subject('Tinkletoilet: '.Input::get('title'));
                     $message->from('no-reply@tinkletoilets.com', 'Tinkle');
                     $message->to(Auth::user()->email);
+                    $message->embedData(QrCode::format('png')->size(1000)->generate('tinkle.dev/toilet/vote/'.$toiletID), 'QrCode.png', 'image/png');
                 });
 
 

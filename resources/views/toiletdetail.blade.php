@@ -18,7 +18,7 @@
                         {{$goodvotes}} <i class="material-icons">thumb_up   </i>
                         {{$badvotes}} <i class="material-icons">&#xe8db;   </i>
                     </p>
-                    <p><b>Aangeboden door:</b> {{$user}}</p>
+                    <p><b>Offered by:</b> {{$user}}</p>
 
                 </div>
 
@@ -31,7 +31,7 @@
                         {{$toilet->percentagehome}}%
                     </div>
                 </div>
-                <p><b>Adress:</b></p>
+                <p><b>Address:</b></p>
                 <p class="adress">{{ $toilet->adress }} {{ $toilet->city }}</p>
 
                 <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>

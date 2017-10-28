@@ -132,8 +132,9 @@ class ToiletController extends Controller
                 {
                     $message->subject('Tinkletoilet: '.Input::get('title'));
                     $message->from('no-reply@tinkletoilets.com', 'Tinkle');
-                    $message->to(Auth::user()->email);
-                    $message->embedData(QrCode::format('png')->size(1000)->generate('tinkle.dev/toilet/vote/'.$toiletID), 'QrCode.png', 'image/png');
+                    $message->to('alessandro.aussems@student.kdg.be');//Auth::user()->email);
+                    //ONLY This email can receive emails because MAILGUN FREE PRICE PLAN!
+                    $message->embedData(QrCode::format('png')->size(1000)->generate('tinkletoilets.com/toilet/vote/'.$toiletID), 'QrCode.png', 'image/png');
                 });
 
 

@@ -264,7 +264,10 @@ class ToiletController extends Controller
     {
 
         $toilet = Toilet::find($id);
-        $vote   = Vote::all()->where("userid",Auth::user()->id);
+        $vote   = Vote::where([
+            'userid' => Auth::user()->id,
+            'toiletid' => $id,
+        ])->get();
         if($toilet === NULL)
         {
             abort(404);

@@ -26,11 +26,11 @@
                         {{ Form::label('description', 'Description') }}
                         {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control')) }}
                     </div>
-        <div class="form-group">
+                    <div class="form-group">
 
-            {{ Form::checkbox('disabledcancome', 'true')}}
-            <i class="material-icons">&#xE914;</i> Accesible for Disabled
-        </div>
+                        {{ Form::checkbox('disabledcancome', 'true')}}
+                        <i class="material-icons">&#xE914;</i> Accesible for Disabled
+                    </div>
 
                     <p>How often are you home? (0 is never &amp; 100 is always)</p>
                     <input  name="percentagehome"  type="number" id="sliderOutput1">

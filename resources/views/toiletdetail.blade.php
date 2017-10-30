@@ -10,7 +10,7 @@
             </div>
         @endif
         <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="header" />
-            <div class="container">
+            <div class="detail">
                 <div class="card-info">
                     <h1 class="card-title">{{ $toilet->title }}</h1>
 
@@ -18,21 +18,23 @@
                         {{$goodvotes}} <i class="material-icons">thumb_up   </i>
                         {{$badvotes}} <i class="material-icons">&#xe8db;   </i>
                     </p>
-                    <p><b>Offered by:</b> {{$user}}</p>
+                    <p>Offered by: {{$user}}</p>
 
                 </div>
 
                 <p>{{ $toilet->description}}</p>
                 <br>
-                <p><b>How often is this toilet available?</b></p>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$toilet->percentagehome}}"
-                         aria-valuemin="0" aria-valuemax="100" style="width:{{$toilet->percentagehome}}%">
-                        {{$toilet->percentagehome}}%
-                    </div>
-                </div>
+
+
                 <p><b>Address:</b></p>
                 <p class="adress">{{ $toilet->adress }} {{ $toilet->city }}</p>
+
+                <p><b>Availability</b></p>
+                <div class="progress" role="progressbar" tabindex="0" aria-valuenow="{{$toilet->percentagehome}}" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                  <span class="progress-meter" style="width: {{$toilet->percentagehome}}%">
+                    <p class="progress-meter-text">{{$toilet->percentagehome}}%</p>
+                  </span>
+                </div>
 
                 <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
 

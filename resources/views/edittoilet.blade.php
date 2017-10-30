@@ -30,23 +30,28 @@
                     </div>
 
 
-                    <p>How often are you home? (0 is never &amp; 100 is always)</p>
-                    <div class="slider" data-slider data-initial-start="0" data-end="100">
-                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
-                        <span class="slider-fill" data-slider-fill></span>
-                        <input name="percentagehome" type="hidden">
-
-                    </div>
-
                     <div class="form-group">
-                        {{ Form::label('disabledcancome', 'Accesible for Disabled') }}
+
                         {{ Form::checkbox('disabledcancome', 'true')}}
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('image', 'Image') }}
-                        {{Form::file('image')}}
+                        <i class="material-icons">&#xE914;</i> Accesible for Disabled
                     </div>
 
+                    <p>How often are you home? (0 is never &amp; 100 is always)</p>
+                    <input  name="percentagehome"  type="number" id="sliderOutput1">
+
+                    <div class="slider" data-slider data-initial-start="0" data-end="100">
+
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1" ></span>
+                        <span class="slider-fill" data-slider-fill></span>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="image" class="button">Upload File</label>
+                        <input type="file" name="image" id="image" class="show-for-sr">
+                    </div>
 
                     {{ Form::submit('Edit toilet!', array('class' => 'btn btn-primary')) }}
 

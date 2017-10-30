@@ -5,7 +5,7 @@ body{
   background-color: rgb(221, 245, 245);
 }
 .navbar{
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
   text-align: center;
@@ -15,7 +15,9 @@ body{
 .navbar-default  , .navbar-toggle {
   border-color:  rgb(221, 245, 245);;
 }
-
+.detail{
+  margin: 2em;
+}
 /*-------------------------Homepage--------------*/
 #map {
     position:absolute;
@@ -202,6 +204,7 @@ margin: -4em 1em 1em 1em;
 .card {
   width: 100%;
   margin-bottom: 0rem  !important;
+  border: none !important;
 }
 
 .card-info {
@@ -266,4 +269,21 @@ margin: -4em 1em 1em 1em;
   border: 1px solid white !important;
   box-shadow: none !important;
 }
+
+.votes{
+  width: 50%;
+  float: left;
+}
+.btn{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
 

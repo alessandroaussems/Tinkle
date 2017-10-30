@@ -29,9 +29,12 @@
                         {{ Form::textarea('description', null, array('class' => 'form-control')) }}
                     </div>
 
-                    <div class="form-group">
-                        {{ Form::label('percentagehome', 'Percentagehome') }}
-                        {{ Form::text('percentagehome', Input::old('percentagehome'), array('class' => 'form-control')) }}
+
+                    <p>How often are you home? (0 is never &amp; 100 is always)</p>
+                    <div class="slider" data-slider data-initial-start="0" data-end="100">
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
+                        <span class="slider-fill" data-slider-fill></span>
+                        <input name="percentagehome" type="hidden">
 
                     </div>
 

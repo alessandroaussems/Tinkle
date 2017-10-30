@@ -32,7 +32,7 @@ class ToiletController extends Controller
             $votes=Vote::where("toiletid",$toilets[$i]->id)->get();
             for($j=0;$j<count($votes);$j++)
             {
-                if($votes[$j]->sort==0)
+                if($votes[$j]->sort==1)
                 {
                     $goodvotes++;
                 }

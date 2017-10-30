@@ -14,7 +14,7 @@
               @if($value->disabledcancome != NULL)
                   <div class="card-icon accessible">
                       <i class="material-icons">accessible</i>
-                  </div>
+          </div>
               @endif
               <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$value->picture }}" alt="header" />
               <div class="EditDelete">

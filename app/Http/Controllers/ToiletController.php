@@ -5,12 +5,14 @@ use App\Toilet;
 use App\Vote;
 use App\User;
 use Mail;
+use QrCode;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 
 class ToiletController extends Controller
@@ -21,12 +23,13 @@ class ToiletController extends Controller
     }
     public function index()
     {
-        $toilets = Toilet::all()->where("userid",Auth::user()->id);
+
+        $toilets = Toilet::where("userid",Auth::user()->id)->get();
         for($i=0;$i<count($toilets);$i++)
         {
             $goodvotes=0;
             $badvotes=0;
-            $votes=Vote::all()->where("toiletid",$toilets[$i]->id);
+            $votes=Vote::where("toiletid",$toilets[$i]->id)->get();
             for($j=0;$j<count($votes);$j++)
             {
                 if($votes[$j]->sort==0)
@@ -40,7 +43,6 @@ class ToiletController extends Controller
             }
             $toilets[$i]->{"goodvotes"}=$goodvotes;
             $toilets[$i]->{"badvotes"}=$badvotes;
-
         }
 
         return view("usertoilets")->with('toilets',$toilets);
@@ -121,13 +123,20 @@ class ToiletController extends Controller
                 $toilet->percentagehome  = Input::get('percentagehome');
 
                 $toilet->save();
+                $toiletID = $toilet->id;
 
-                Mail::raw("Your new toilet is added!", function($message)
+
+
+                Mail::raw("Your toilet is succesfully added! Thanks for using Tinkle! 
+                In attachment you find a QR-code, please hang this in your toilets, with this people can rate your toilet", function($message) use($toiletID)
                 {
-                    $message->subject('Your new toilet!: '. Input::get('title'));
-                    $message->from('no-reply@tinkletoilets.com', 'TinkleToilets');
-                    $message->to(Auth::user()->email);
+                    $message->subject('Tinkletoilet: '.Input::get('title'));
+                    $message->from('no-reply@tinkletoilets.com', 'Tinkle');
+                    $message->to('alessandro.aussems@student.kdg.be');//Auth::user()->email);
+                    //ONLY This email can receive emails because MAILGUN FREE PRICE PLAN!
+                    $message->embedData(QrCode::format('png')->size(1000)->generate('tinkletoilets.com/toilet/vote/'.$toiletID), 'QrCode.png', 'image/png');
                 });
+
 
                 // redirect
                 Session::flash('message', 'Toilet succesfully added!');
@@ -135,9 +144,19 @@ class ToiletController extends Controller
             }
             else
             {
-                return Redirect::to('toilets/create')
-                    ->withErrors("This adress could not be resolved! Our apologies!")
-                    ->withInput();
+                if ($response->status == 'OVER_QUERY_LIMIT')
+                {
+                    return Redirect::to('toilets/create')
+                        ->withErrors("The API limit for today is exceeded!")
+                        ->withInput();
+                }
+                else
+                {
+                    return Redirect::to('toilets/create')
+                        ->withErrors("This address could not be resolved, Our apologies.")
+                        ->withInput();
+                }
+
             }
 
 

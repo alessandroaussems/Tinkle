@@ -262,5 +262,8 @@ margin: -4em 1em 1em 1em;
  }
 
 
-
+[type='number']{
+  border: 1px solid white !important;
+  box-shadow: none !important;
+}
 

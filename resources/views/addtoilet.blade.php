@@ -26,31 +26,29 @@
                         {{ Form::label('description', 'Description') }}
                         {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control')) }}
                     </div>
+        <div class="form-group">
 
-<<<<<<< HEAD
-                    <div class="form-group">
-                        {{ Form::label('percentagehome', 'How often are you home? (0 is never, 100 is always)') }}
-                        {{ Form::text('percentagehome', Input::old('percentagehome'), array('class' => 'form-control')) }}
+            {{ Form::checkbox('disabledcancome', 'true')}}
+            <i class="material-icons">&#xE914;</i> Accesible for Disabled
+        </div>
 
-=======
                     <p>How often are you home? (0 is never &amp; 100 is always)</p>
+                    <input  name="percentagehome"  type="number" id="sliderOutput1">
+
                     <div class="slider" data-slider data-initial-start="0" data-end="100">
 
-                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
                         <span class="slider-fill" data-slider-fill></span>
-                        <input name="percentagehome" type="hidden" >
->>>>>>> 391e8fcf8c7af5910cc5401f21dddaec2594909c
+
                     </div>
 
 
-                    <div class="form-group">
-                        {{ Form::label('disabledcancome', 'Accesible for Disabled') }}
-                        {{ Form::checkbox('disabledcancome', 'true')}}
-                    </div>
+
 
                     <div class="form-group">
-                        {{ Form::label('image', 'Image upload') }}
-                        {{Form::file('image')}}
+
+                        <label for="image" class="button">Upload File</label>
+                        <input type="file" name="image" id="image" class="show-for-sr">
                     </div>
 
 

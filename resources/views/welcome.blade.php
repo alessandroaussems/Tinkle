@@ -1,13 +1,7 @@
 @extends('layouts.app')
 @section('content')
-        <div>
+        <div class="home">
 
-            @auth
-                @else
-            @endauth
-            <div class="container fill">
-              <div id="map"></div>
-            </div>
             <div class="logo">
               <div class="heroContent">
                 <img src="{{ asset('img/logo-text.png') }}" />

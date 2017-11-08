@@ -46,9 +46,12 @@
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
                 @else
+
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
                     <li><a href="{{ url('toilets') }}">View my toilets  </a></li>
                     <li><a href="{{ url('toilets/create') }}">Add a toilet</a></li>
+
                     <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();

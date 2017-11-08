@@ -12,22 +12,22 @@
                     {{ Form::open(['url' => 'toilets','files' => true])}}
 
                     <div class="form-group">
-                        {{ Form::label('title', 'Title') }}
+                        {{ Form::label('title', 'Title',array('class' => 'required'))  }}
                         {{ Form::text('title', Input::old('title'), array('class' => 'form-control')) }}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('adress', 'Adress') }}
+                        {{ Form::label('adress', 'Adress',array('class' => 'required'))  }}
                         {{ Form::text('adress', Input::old('adress'), array('class' => 'form-control')) }}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('city', 'City') }}
+                        {{ Form::label('city', 'City',array('class' => 'required'))  }}
                         {{ Form::text('city', Input::old('city'), array('class' => 'form-control')) }}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('description', 'Description') }}
+                        {{ Form::label('description', 'Description',array('class' => 'required'))  }}
                         {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control')) }}
                     </div>
                     <div class="form-group">
@@ -47,12 +47,8 @@
                     </div>
 
 
-
-
                     <div class="form-group">
-
-                        <label for="image" class="button">Upload File</label>
-                        <input type="file" name="image" id="image" class="show-for-sr">
+                            <input type="file" name="image" id="image" class="required">
                     </div>
 
 

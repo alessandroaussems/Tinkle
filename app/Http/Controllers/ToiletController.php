@@ -85,7 +85,7 @@ class ToiletController extends Controller
             $image->move(public_path('img/toiletuploads'), $photoName);
 
             $address = Input::get("adress").Input::get("city");
-            $url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($address);
+            $url = "https://maps.google.com/maps/api/geocode/json?address=".urlencode($address)."&key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY";
 
 
             $ch = curl_init();
@@ -144,18 +144,9 @@ class ToiletController extends Controller
             }
             else
             {
-                if ($response->status == 'OVER_QUERY_LIMIT')
-                {
-                    return Redirect::to('toilets/create')
-                        ->withErrors("The API limit for today is exceeded!")
-                        ->withInput();
-                }
-                else
-                {
-                    return Redirect::to('toilets/create')
-                        ->withErrors("This address could not be resolved, Our apologies.")
-                        ->withInput();
-                }
+                return Redirect::to('toilets/create')
+                    ->withErrors("This address could not be resolved, Our apologies.")
+                    ->withInput();
 
             }
 
@@ -200,7 +191,7 @@ class ToiletController extends Controller
             $image->move(public_path('img/toiletuploads'), $photoName);
 
             $address = Input::get("adress").Input::get("city");
-            $url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($address);
+            $url = "https://maps.google.com/maps/api/geocode/json?address=".urlencode($address)."&key=AIzaSyBgNloFNpl_OBS75FoR4UVRhPYUEQw0qkY";
 
 
             $ch = curl_init();

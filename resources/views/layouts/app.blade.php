@@ -67,12 +67,6 @@
 </div>
 
     <div id="app">
-
-
-
-        @if (Session::has('message'))
-            <div class="alert alert-success">{{ Session::get('message') }}</div>
-        @endif
         @yield('content')
     </div>
 <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>

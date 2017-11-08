@@ -351,7 +351,7 @@ body{
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  transition: all 0.2s ease-in;
+  transition: all 0.01s ease-in;
 }
 
 .curtain-menu-wrapper .curtain-menu-list li:hover {
@@ -509,18 +509,30 @@ body{
   right: 0;
 }
 
+.container{
+  padding-top: 5em;
+}
+.delete{
+  display:inline-block;
+  position: absolute;
+  right: 1em;
+}
 
 
+@media only screen and (min-width: 50em) {
+  .heroContent{
+    width: 30%;
+  }
+  .card {
+    width: 40%;
+    margin: 5%;
+    float: left;
+    position: relative;
+  }
+  .delete{
+    display:inline-block;
+    position: absolute;
 
-
-
-
-@media screen and (min-width: 1001px) {
-  ul li a:after {
-    content: " (" attr(data-email) ")";
-    font-size: 12px;
-    font-style: italic;
-    color: #666666;
   }
 }
 

@@ -25,7 +25,7 @@
                 <div class="EditDelete">
                     <a class="btn btn-small btn-info edit" href="{{ URL::to('toilets/' . $value->id . '/edit') }}">Edit</a>
 
-                    {{ Form::open(array('url' => 'toilets/' . $value->id, 'style'=>'display:inline-block; position:absolute; right:1em;')) }}
+                    {{ Form::open(array('url' => 'toilets/' . $value->id, 'class' =>'delete')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
                     {{ Form::close() }}

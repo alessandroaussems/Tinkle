@@ -23,65 +23,51 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
 </head>
+
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container navContainer">
-                <div class="navbar-header">
+<div class="curtain-menu-button" data-curtain-menu-button>
+    <div class="curtain-menu-button-toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</div>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                      <div class="content">
-                        <img src="{{ asset('img/logo-text2.png') }}" alt="logo">
-                      </div>
-
-
-
-                    </a>
-                </div>
-                <div class="content">
-                  <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                      <!-- Left Side Of Navbar -->
-                      <!-- Right Side Of Navbar -->
-                      <ul class="nav navbar-nav navbar-right">
-                          <!-- Authentication Links -->
-
-                          @guest
-                              <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
-                              <li><a href="{{ route('login') }}">Login</a></li>
-                              <li><a href="{{ route('register') }}">Register</a></li>
-                          @else
-                                      <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
-                                      <li><a href="{{ url('toilets') }}">View my toilets  </a></li>
-                                      <li><a href="{{ url('toilets/create') }}">Add a toilet</a></li>
-                                      <li>
-                                          <a href="{{ route('logout') }}"
-                                              onclick="event.preventDefault();
+<!-- the menu  -->
+<div class="curtain-menu">
+    <div class="curtain"></div>
+    <div class="curtain"></div>
+    <div class="curtain"></div>
+    <div class="curtain-menu-wrapper">
+        <ul class="curtain-menu-list menu vertical">
+            @guest
+                <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+                @else
+                    <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
+                    <li><a href="{{ url('toilets') }}">View my toilets  </a></li>
+                    <li><a href="{{ url('toilets/create') }}">Add a toilet</a></li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
                                                        document.getElementById('logout-form').submit();">
-                                              Logout
-                                          </a>
+                            Logout
+                        </a>
 
-                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                              {{ csrf_field() }}
-                                          </form>
-                                      </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
 
-                          @endguest
-                      </ul>
-                  </div>
-                </div>
+                    @endguest
+        </ul>
+    </div>
+</div>
 
+    <div id="app">
 
-            </div>
-        </nav>
 
 
         @if (Session::has('message'))
@@ -89,8 +75,13 @@
         @endif
         @yield('content')
     </div>
-
-    <!-- Scripts -->
+<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script>
+    $('[data-curtain-menu-button]').click(function(){
+        $('body').toggleClass('curtain-menu-open');
+    })
+</script>
+<!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/foundation/vendor/jquery.js') }}"></script>
     <script src="{{ asset('js/foundation/vendor/what-input.js') }}"></script>

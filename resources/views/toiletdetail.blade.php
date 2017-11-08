@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+    <div class="header">
+        <a href="{{ url('/') }}"><img src="{{ asset('img/logo-text2.png') }}" alt="logo"></a>
+    </div>
     <div class="card">
         @if($toilet->disabledcancome != NULL)
             <div class="card-icon accessible">
@@ -39,6 +41,7 @@
                 <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
 
             </div>
+        <br>
 
     </div>
 

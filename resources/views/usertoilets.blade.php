@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+    <div class="header">
+        <a href="{{ url('/') }}"><img src="{{ asset('img/logo-text2.png') }}" alt="logo"></a>
+    </div>
   @if(count($toilets) == 0)
       <h2 class="text-center">You haven't added any toilets.</h2>
       <a href="{{ url('toilets/create') }}" class="btn btn-primary">Add a toilet</a>

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+  <div class="header">
+    <a href="{{ url('/') }}"><img src="{{ asset('img/logo-text2.png') }}" alt="logo"></a>
+  </div>
 <div class="container">
   @if ($alreadyvoted)
     <div class="voteM">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <div style="width:100%; height: 92.5%; position: absolute;">
+    <div style="width:100%; height: 100%; position: absolute;">
     <div id="map" style="clear:both; height:100%;"></div>
     </div>
     <script>
@@ -41,7 +41,7 @@
                 markers_toilet[i].index=i;
 
                 contents_toilets[i] = '<div id="content">'+
-                '<h4 class="text-center">'+toilets[i]["title"]+'</h4>'+
+                '<br><h4 class="text-center">'+toilets[i]["title"]+'</h4>'+
                 '<img src="<?php echo asset("img/toiletuploads/") ?>'+"/"+toilets[i]["picture"]+
                 '"</div>'+
 

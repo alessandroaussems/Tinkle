@@ -14,22 +14,22 @@
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        {{ Form::label('title', 'Title') }}
+                        {{ Form::label('title', 'Title',array('class' => 'required'))  }}
                         {{ Form::text('title', null, array('class' => 'form-control')) }}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('adress', 'Address') }}
+                        {{ Form::label('adress', 'Address',array('class' => 'required'))  }}
                         {{ Form::text('adress', null, array('class' => 'form-control')) }}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('city', 'City') }}
+                        {{ Form::label('city', 'City',array('class' => 'required'))  }}
                         {{ Form::text('city', null, array('class' => 'form-control')) }}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('description', 'Description') }}
+                        {{ Form::label('description', 'Description',array('class' => 'required')) }}
                         {{ Form::textarea('description', null, array('class' => 'form-control')) }}
                     </div>
 
@@ -43,18 +43,16 @@
                     <p>How often are you home? (0 is never &amp; 100 is always)</p>
                     <input  name="percentagehome"  type="number" id="sliderOutput1">
 
-                    <div class="slider" data-slider data-initial-start="0" data-end="100">
+                    <div class="slider" data-slider data-initial-start="{{$toilet->percentagehome}}" data-end="100">
 
-                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1" ></span>
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
                         <span class="slider-fill" data-slider-fill></span>
 
                     </div>
 
 
                     <div class="form-group">
-
-                        <label for="image" class="button">Upload File</label>
-                        <input type="file" name="image" id="image" class="show-for-sr">
+                        <input type="file" name="image" id="image" class="required">
                     </div>
 
                     {{ Form::submit('Edit toilet!', array('class' => 'btn btn-primary')) }}

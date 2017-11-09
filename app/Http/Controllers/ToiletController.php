@@ -325,7 +325,7 @@ class ToiletController extends Controller
             return;
         }
         $user = User::find($toilet->userid);
-        $votes = Vote::all()->where("toiletid",$id);
+        $votes = Vote::where("toiletid",$id)->get();
         for ($i=0;$i<count($votes);$i++)
         {
             if($votes[$i]->sort==0)

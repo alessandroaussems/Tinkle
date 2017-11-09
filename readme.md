@@ -8,7 +8,7 @@ Created by:
 - [Alessandro Aussems](https://github.com/alessandroaussems)<br>
 
 
-######Technical
+#### Technical
 - To view the "app" open on a mobile browser
 
 Contribute? Contact us!

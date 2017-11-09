@@ -186,7 +186,7 @@ body{
   border-radius: 0;
   width: 100%;
   color: white;
-  background: rgb(50, 73, 87);
+  background: #0c3e5f !important;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
   padding: 0.6em;
@@ -194,18 +194,31 @@ body{
 }
 .btn-primary:hover{
   color: white;
-  background-color: #165B75;
+  background-color: #0c3e5f;
 }
-.btn-primary.active, .btn-primary:active {
+.button {
+
+  background: #0c3e5f !important;
 }
 
 .form-control {
   border-radius: 0;
   box-shadow: none;
 }
+.slider span{
+  background: #0c3e5f !important;
+}
+/*-------------------------Login------------------------*/
 
+.social {
+  margin-right: .25rem;
+}
 
-
+.social.facebook {
+  background-color: #3b5998;
+  color: #fefefe;
+}
+/*--------------------------------------------------------------*/
 
 
 .card {
@@ -567,7 +580,7 @@ body{
 
 ::-webkit-file-upload-button {
   color: #fff;
-  background-color: #3097D1;
+  background: #0c3e5f !important;
   border-color: #2a88bd;
   display: inline-block;
   margin-bottom: 0;
@@ -597,4 +610,5 @@ body{
   color: #3097D1 !important;
   background-color: #fff !important;
   border-color: #2a88bd !important;
+  width: 100% !important;
 }

@@ -9,8 +9,10 @@
 
 
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+        <div class="panel-body">
+            <a href="{{url('/redirect')}}" class="button facebook btn btn-primary"><i class="fa fa-facebook" aria-hidden="true"></i></i> Login with Facebook</a>
+
+            <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -60,9 +62,8 @@
                                     Login
                                 </button>
 
-                                <div class="col-md-8 col-md-offset-4">
-                                    <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
-                                </div>
+
+
 
                                 <a class="btn btn-link btn-reversed" href="{{ route('register') }}">
                                     No account? Register!

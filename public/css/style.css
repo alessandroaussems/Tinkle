@@ -633,6 +633,146 @@ padding-bottom: 5em;
 
 
 
+.hero-full-screen {
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: url("../img/bg.jpg") center center no-repeat ;
+  background-size: cover;
+}
+
+.middle-content-section{
+  width: 20%;
+}
+#main-content-section{
+  padding:  10em 0;
+}
+.hero-full-screen .middle-content-section {
+  text-align: center;
+  color: #fefefe;
+}
+
+.hero-full-screen .top-content-section {
+  width: 100%;
+}
+
+.hero-full-screen .bottom-content-section {
+  padding: 1rem;
+}
+
+.hero-full-screen .bottom-content-section svg {
+  height: 3.75rem;
+  width: 3.75rem;
+  fill: #fefefe;
+}
+
+.hero-full-screen .top-bar {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu-text {
+  color: #fefefe;
+}
+
+.hero-full-screen .top-bar .menu li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.hero-full-screen .top-bar .menu a {
+  color: #fefefe;
+  font-weight: bold;
+}
+.googlePlay{
+  width: 30%;
+  top: 5em;
+}
+.text{
+  font-family: 'Lobster', cursive;
+  color: black;
+  font-size: 2em;
+}
+hr{
+  border-bottom: 1px solid black !important;
+}
+
+
+.tinkleTeam{
+  margin: 0em 0 3em 0;
+}
+
+
+
+.card-profile-stats .card-profile-stats-intro {
+  text-align: center;
+
+}
+
+.card-profile-stats .card-profile-stats-intro .card-profile-stats-intro-pic {
+  border-radius: 50%;
+}
+
+.card-profile-stats .card-profile-stats-intro .card-profile-stats-intro-pic {
+  margin:  0;
+}
+.card-profile-stats .card-profile-stats-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+
+@media print, screen and (min-width: 64em) {
+  .card-profile-stats .card-profile-stats-intro {
+
+  }
+  .card-profile-stats .card-profile-stats-intro .card-profile-stats-intro-pic {
+    max-width: 250px;
+  }
+  .card-profile-stats .card-profile-stats-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1020px) {
+  .middle-content-section{
+    width: 50%;
+  }
+
+}
+
 
 
 

@@ -319,6 +319,11 @@ class ToiletController extends Controller
         $badvotes=[];
         $comments=[];
         $toilet = Toilet::find($id);
+        if(!isset($toilet))
+        {
+            abort(404);
+            return;
+        }
         $user = User::find($toilet->userid);
         $votes = Vote::all()->where("toiletid",$id);
         for ($i=0;$i<count($votes);$i++)

@@ -69,7 +69,7 @@
                                 </button>
                             </div>
                             <div class="col-md-8 col-md-offset-4">
-                                <a href="{{url('/redirect')}}" class="btn btn-primary">Register with Facebook</a>
+                                <a href="{{url('/redirect')}}" class=" facebook btn"><i class="fa fa-facebook" aria-hidden="true"></i>  Register with Facebook</a>
                             </div>
                         </div>
                     </form>

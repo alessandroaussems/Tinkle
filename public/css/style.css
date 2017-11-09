@@ -187,6 +187,7 @@ body{
   width: 100%;
   color: white;
   background: #0c3e5f !important;
+  border: 1px solid #0c3e5f !important;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
   padding: 0.6em;
@@ -208,15 +209,19 @@ body{
 .slider span{
   background: #0c3e5f !important;
 }
+.btn-link{
+  color: #0c3e5f !important;
+}
+.progress-meter{
+  background-color: #0c3e5f !important ;
+}
 /*-------------------------Login------------------------*/
 
-.social {
-  margin-right: .25rem;
-}
-
-.social.facebook {
+.facebook {
   background-color: #3b5998;
   color: #fefefe;
+  margin-top: 1em;
+  width: 100%;
 }
 /*--------------------------------------------------------------*/
 
@@ -607,9 +612,9 @@ body{
 }
 .btn-reversed{
   margin-top: 10px;
-  color: #3097D1 !important;
+  color: #0c3e5f !important;
   background-color: #fff !important;
-  border-color: #2a88bd !important;
+  border-color: #0c3e5f !important;
   width: 100% !important;
 }
 .commentcontainer

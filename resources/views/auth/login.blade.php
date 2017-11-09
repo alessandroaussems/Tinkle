@@ -10,7 +10,7 @@
 
 
         <div class="panel-body">
-            <a href="{{url('/redirect')}}" class="button facebook btn btn-primary"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
+            <a href="{{url('/redirect')}}" class="facebook btn "><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
 
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

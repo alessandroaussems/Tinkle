@@ -43,8 +43,8 @@
         <ul class="curtain-menu-list menu vertical">
             @guest
                 <li><a href="{{ url('findatoilet') }}">Find a toilet</a></li>
-                <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}">Register</a></li>
+                <li><a href="{{ url('login') }}">Login</a></li>
+                <li><a href="{{ url('register') }}">Register</a></li>
                 @else
 
                     <li><a href="{{ url('/') }}">Home</a></li>
@@ -59,7 +59,7 @@
                             Logout
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
                     </li>

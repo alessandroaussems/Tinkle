@@ -8,6 +8,7 @@
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "guzzlehttp/guzzle": "~5.3|~6.0",
+        "jenssegers/agent": "^2.5",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",

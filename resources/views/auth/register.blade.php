@@ -68,6 +68,9 @@
                                     Register
                                 </button>
                             </div>
+                            <div class="col-md-8 col-md-offset-4">
+                                <a href="{{url('/redirect')}}" class="btn btn-primary">Register with Facebook</a>
+                            </div>
                         </div>
                     </form>
                 </div>

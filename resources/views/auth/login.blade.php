@@ -60,6 +60,10 @@
                                     Login
                                 </button>
 
+                                <div class="col-md-8 col-md-offset-4">
+                                    <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+                                </div>
+
                                 <a class="btn btn-link btn-reversed" href="{{ route('register') }}">
                                     No account? Register!
                                 </a>

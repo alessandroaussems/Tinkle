@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => '2032400370328281',
+        'client_secret' => '7fbb4e9f400b6cb34430e98af1d89736',
+        'redirect' => 'http://tinkle.dev/callback',
+    ],
 
 ];

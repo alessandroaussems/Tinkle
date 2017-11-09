@@ -72,7 +72,7 @@
     <div id="app">
         @yield('content')
     </div>
-<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 <script>
     $('[data-curtain-menu-button]').click(function(){
         $('body').toggleClass('curtain-menu-open');

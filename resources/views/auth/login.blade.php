@@ -38,6 +38,9 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                                <a class="btn btn-link text-left" href="{{ route('password.request') }}">
+                                    Forgot Your Password?
+                                </a>
                             </div>
                         </div>
 
@@ -57,10 +60,7 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                                <a class="btn btn-link" href="{{ route('register') }}">
+                                <a class="btn btn-link btn-reversed" href="{{ route('register') }}">
                                     No account? Register!
                                 </a>
                             </div>

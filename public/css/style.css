@@ -588,3 +588,9 @@ body{
   content:"*";
   color:red;
 }
+.btn-reversed{
+  margin-top: 10px;
+  color: #3097D1 !important;
+  background-color: #fff !important;
+  border-color: #2a88bd !important;
+}

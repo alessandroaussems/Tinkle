@@ -5,8 +5,6 @@
     <div class="header">
         <a href="{{ url('/') }}"><img src="{{ asset('img/logo-text2.png') }}" alt="logo"></a>
     </div>
-    <div class=" center">
-        <div class="detail">
             @if($toilet->disabledcancome != NULL)
                 <div class="card-icon accessible">
                     <i class="material-icons">accessible</i>
@@ -43,10 +41,7 @@
 
             </div>
             <br>
-        </div>
 
-
-    </div>
 
     <div class="container commentcontainer">
         <div class="row">

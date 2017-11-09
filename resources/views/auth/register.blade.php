@@ -7,7 +7,6 @@
 
     <div class="container">
 
-
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -74,6 +73,5 @@
                         </div>
                     </form>
                 </div>
-
 </div>
 @endsection

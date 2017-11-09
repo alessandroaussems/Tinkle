@@ -9,11 +9,13 @@
         <div class="alert alert-success">{{ Session::get('message') }}</div>
     @endif
     @if(count($toilets) == 0)
-        <h2 class="text-center">You haven't added any toilets.</h2>
-        <a href="{{ url('toilets/create') }}" class="btn btn-primary">Add a toilet</a>
+        <div class="container">
+
+            <h2 class="text-center">You haven't added any toilets.</h2>
+            <a href="{{ url('toilets/create') }}" class="btn btn-primary">Add a toilet</a>
+        </div>
     @else
         @foreach($toilets as $key => $value)
-
 
             <div class="card">
                 @if($value->disabledcancome != NULL)
@@ -45,18 +47,7 @@
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
         @endforeach
     @endif
-
-
-
+    
 @endsection

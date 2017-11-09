@@ -220,7 +220,7 @@ body{
 .facebook {
   background-color: #3b5998;
   color: #fefefe;
-  margin-top: 1em;
+  margin: 1em 0;
   width: 100%;
 }
 /*--------------------------------------------------------------*/
@@ -623,8 +623,6 @@ padding-bottom: 5em;
   padding-top: 0.5em;
 }
 /*---------------------------------Desktop--------------------------------------*/
-
-
 
 
 

@@ -5,13 +5,14 @@
     <div class="header">
         <a href="{{ url('/') }}"><img src="{{ asset('img/logo-text2.png') }}" alt="logo"></a>
     </div>
-    <div class="card">
-        @if($toilet->disabledcancome != NULL)
-            <div class="card-icon accessible">
-                <i class="material-icons">accessible</i>
-            </div>
-        @endif
-        <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="header" />
+    <div class=" center">
+        <div class="detail">
+            @if($toilet->disabledcancome != NULL)
+                <div class="card-icon accessible">
+                    <i class="material-icons">accessible</i>
+                </div>
+            @endif
+            <img class="card-img" src="{{ asset('img/toiletuploads/')."/".$toilet->picture }}" alt="header" />
             <div class="detail">
                 <div class="card-info">
                     <h1 class="card-title">{{ $toilet->title }}</h1>
@@ -37,11 +38,13 @@
                     <p class="progress-meter-text">{{$toilet->percentagehome}}%</p>
                   </span>
                 </div>
-
-                <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="btn btn-primary full" target="_blank">Navigate</a>
+                <br>
+                <a href="https://www.google.com/maps/dir/?api=1&destination={{$toilet->lat}},{{$toilet->long}}&travelmode=walking" class="button full" target="_blank">Navigate</a>
 
             </div>
-        <br>
+            <br>
+        </div>
+
 
     </div>
 

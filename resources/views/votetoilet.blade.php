@@ -16,12 +16,12 @@
     {{Form::token()}}
     {{ Form::hidden('invisibleid', $toilet->id) }}
     <div class="form-group votes">
-      {{ Form::label('vote', 'Good', array('class' => 'btn btn-success ')) }}
-      {{ Form::radio('vote', 'Good',true, array('class' => 'hidden'), array('style'=> 'display:none; ')) }}
+      {{ Form::label('vote', 'Good') }}
+      {{ Form::radio('vote', 'Good',true) }}
     </div>
       <div class="form-group votes">
-      {{ Form::label('vote', 'Bad', array('class' => 'btn btn-danger ')) }}
-      {{ Form::radio('vote', 'Bad', array('class' => 'hidden'), array('style'=> 'display:none; '))  }}
+      {{ Form::label('vote', 'Bad') }}
+      {{ Form::radio('vote', 'Bad')  }}
     </div>
     <div class="form-group">
       {{ Form::label('comment', 'Comment:') }}

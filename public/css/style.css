@@ -136,6 +136,11 @@ body{
 .toilet .adress p{
   margin: 4em 0 0 0;
 }
+
+
+
+
+
 /*-------------------------------MAP & detail--------------------------------*/
 .full{
   width: 100%;
@@ -151,7 +156,10 @@ body{
 .vote{
   width: 50%;
   float: left;
-  margin: 5em 0
+  margin: 5em 0;
+}
+#vote:checked{
+  background: grey !important;
 }
 .EditDelete{
   margin: -4em 1em 1em 1em;
@@ -269,13 +277,7 @@ body{
   box-shadow: none !important;
 }
 
-.votes{
-  width: 50%;
-  float: left;
-}
-.btn{
-  width: 100%;
-}
+
 
 
 
@@ -534,6 +536,8 @@ body{
     position: absolute;
 
   }
+
+
 }
 
 

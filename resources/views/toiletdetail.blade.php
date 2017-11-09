@@ -21,7 +21,7 @@
                         {{$goodvotes}} <i class="material-icons">thumb_up   </i>
                         {{$badvotes}} <i class="material-icons">&#xe8db;   </i>
                     </p>
-                    <p>Offered by: {{$user}}</p>
+                    <p><strong>Offered by:</strong> {{$user}}</p>
 
                 </div>
 
@@ -48,27 +48,27 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-        <div class="comments">
-          <ul>
-            @foreach($comments as $key => $value)
-              <li>
-                <div class="comment">
-                  <h4>{{$value[0]}}</h4>
-                  <p>{{$value[1]}}</p>
+    <div class="container commentcontainer">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="page-header">
+                    <h1>Comments </h1>
                 </div>
-              </li>
-              @endforeach
-          </ul>
+                <div class="comments-list">
+                    @foreach($comments as $key => $value)
+                    <div class="media">
+                        <div class="media-body">
+
+                            <h4 class="media-heading user_name"><strong>{{$value[0]}}</strong></h4>
+                            {{$value[1]}}
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+            </div>
         </div>
+    </div>
 
 
 @endsection

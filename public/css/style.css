@@ -612,3 +612,8 @@ body{
   border-color: #2a88bd !important;
   width: 100% !important;
 }
+.commentcontainer
+{
+padding-bottom: 5em;
+  padding-top: 0.5em;
+}

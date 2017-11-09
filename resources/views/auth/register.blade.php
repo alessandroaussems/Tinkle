@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="header">
+        <a href="{{ url('/') }}"><img src="{{ asset('img/logo-text2.png') }}" alt="logo"></a>
+    </div>
+
+    <div class="container">
 
 
                 <div class="panel-body">
@@ -63,6 +67,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+                            </div>
+                            <div class="col-md-8 col-md-offset-4">
+                                <a href="{{url('/redirect')}}" class="btn btn-primary">Register with Facebook</a>
                             </div>
                         </div>
                     </form>

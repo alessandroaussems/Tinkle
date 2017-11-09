@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
+
 //Route::get('/', 'HomeController@index')->name('home'); //defines pages to which user is redirected on login
 
 Route::get("/findatoilet","FindToiletController@index");

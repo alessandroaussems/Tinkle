@@ -318,13 +318,13 @@ class ToiletController extends Controller
         $goodvotes=[];
         $badvotes=[];
         $comments=[];
-        $toilet = Toilet::find($id);
+        $toilet = Toilet::where("id",$id)->first();
         if(!isset($toilet))
         {
             abort(404);
             return;
         }
-        $user = User::find($toilet->userid);
+        $user = User::where("id",$toilet->userid)->first();
         $votes = Vote::where("toiletid",$id)->get();
         for ($i=0;$i<count($votes);$i++)
         {
@@ -339,10 +339,10 @@ class ToiletController extends Controller
             if($votes[$i]->comment!=NULL)
             {
                 $idofvoter=$votes[$i]->userid;
-                $user = User::find($idofvoter);
-                $user_name=$user->name;
+                $user_vote = User::find($idofvoter);
+                $user_vote_name=$user_vote->name;
                 $thecomment=[];
-                array_push($thecomment,$user_name);
+                array_push($thecomment,$user_vote_name);
                 array_push($thecomment,$votes[$i]->comment);
                 array_push($comments,$thecomment);
             }
